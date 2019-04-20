@@ -4,49 +4,36 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Enter criteria name</div>
+                    <div class="card-header">Введите приоритеты</div>
+                    <form id="createForm"
+                          class="form-horizontal form-label-left"
+                          method="POST"
+                          action="{{route('criteria-calculate', $hier_id)}}">
+                        @csrf
                     <div class="card-body">
                             <table id="example" class="display" style="width:100%">
                                 <thead>
                                 <tr>
-                                    <th>\--\</th>
+{{--                                    {{dd($criteria)}}--}}
+                                    <th>\</th>
                                     @foreach($criteria as $cr)
-                                        <th>{{$cr['criteria_name']}}</th>
+                                        <td>{{$cr['criteria_name']}}</td>
                                     @endforeach
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>{{$criteria['0']['criteria_name']}}</td>
-                                        <td><input type="text"  name="row-1-1" value="{{round($criteria['0']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-2" value="{{round($criteria['1']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-3" value="{{round($criteria['2']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-4" value="{{round($criteria['3']['priority'], 2)}}" disabled></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{$criteria['1']['criteria_name']}}</td>
-                                        <td><input type="text"  name="row-1-1" value="{{round($criteria['0']['priority']/$criteria['1']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-2" value="{{round($criteria['0']['priority']/$criteria['0']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-3" value="{{round($criteria['1']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-4" value="{{round($criteria['2']['priority'], 2)}}" disabled></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{$criteria['2']['criteria_name']}}</td>
-                                        <td><input type="text"  name="row-1-1" value="{{round($criteria['0']['priority']/$criteria['2']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-2" value="{{round($criteria['0']['priority']/$criteria['1']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-3" value="{{round($criteria['0']['priority']/$criteria['0']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-4" value="{{round($criteria['1']['priority'], 2)}}" disabled></td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{$criteria['3']['criteria_name']}}</td>
-                                        <td><input type="text"  name="row-1-1" value="{{round($criteria['0']['priority']/$criteria['3']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-2" value="{{round($criteria['0']['priority']/$criteria['2']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-3" value="{{round($criteria['0']['priority']/$criteria['1']['priority'], 2)}}" disabled></td>
-                                        <td><input type="text"  name="row-1-4" value="{{round($criteria['0']['priority']/$criteria['0']['priority'], 2)}}" disabled></td>
-                                    </tr>
+                                    @for($i=0; $i<count($criteria); $i++)
+                                        <tr>
+                                            <td>{{$criteria[$i]['criteria_name']}}</td>
+                                            @for($j=0; $j<count($criteria); $j++)
+                                                <td><input type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria[$i]['id'] . "|" . $criteria[$j]['id']}}"  @if($i>=$j) disabled @endif></td>
+                                            @endfor
+                                        </tr>
+                                    @endfor
                                 </tbody>
                             </table>
                     </div>
+                    </form>
                     <div>
                         <a href="{{route('criteria-calculate', $hier_id)}}" class="btn btn-warning" role="button" aria-pressed="true">Next</a>
                     </div>

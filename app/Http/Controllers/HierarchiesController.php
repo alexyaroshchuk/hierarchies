@@ -26,8 +26,24 @@ class HierarchiesController extends Controller
             'id_user' => Auth::user()->id,
         ]);
         $hier_id = Hierarchy::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->first()->id;
-//        dd($hier_id);
-//        return redirect('/criteria')->with('hier_id');
-        return redirect()->route('criteria', $hier_id)->with('hier_id');
+
+        return redirect()->route('hierarchy-count', $hier_id)->with('hier_id');
+    }
+
+    public function count($hier_id)
+    {
+//        $hierarchy = Hierarchy::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->first();
+        return view('hierarchies.count', compact('hier_id'));
+    }
+
+    public function saveCount(Request $request, $hier_id)
+    {
+        $count = $request->count;
+        $count_first = $request->count_first;
+        $count_second = $request->count_second;
+        $count_third = $request->count_third;
+
+        return view('criteries.new',
+            compact('hier_id', 'count', 'count_first', 'count_second', 'count_third'));
     }
 }

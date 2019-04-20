@@ -20,42 +20,44 @@ class CriteriaController extends Controller
         $user = Auth::user();
 
         $input = $request->input();
-        $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
-        for ($i = 1; $i < (count($input)+1)/2; $i++) {
-            Criteria::create([
-                'criteria_name' => $input[$i],
-                'id_hierarchies' => $hier_id,
-                'priority' => $input['priority' . $i],
-            ]);
+//        dd($input);
+//        $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
+
+        if(!isset($input['count_second_1'])) {
+            for ($i = 1; $i < (count($input)); $i++) {
+                Criteria::create([
+                    'criteria_name' => $input['count_first_' . $i],
+                    'id_hierarchies' => $hier_id,
+                ]);
+            }
         }
+        $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
+
 //        return redirect('/alternative');
-        return redirect()->route('alternative', $hier_id)->with('hier_id');
+        return redirect()->route('priority', $hier_id)->with('hier_id');
     }
 
     public function priority($hier_id)
     {
         $user = Auth::user();
 
-        $hierarchy = Hierarchy::where('id_user', $user->id)->get()->toArray();
-        $hierarchy = array_pop($hierarchy);
         $criteria = Criteria::where('id_hierarchies',  $hier_id)->get()->toArray();
-        $alternative = Alternative::where('id_hierarchies', $hier_id)->get()->toArray();
 
 //        dd($criteria);
 
-        return view('criteries.priority', compact(['criteria', 'hierarchy', 'alternative', 'hier_id']));
+        return view('criteries.priority', compact(['criteria', 'hier_id']));
     }
 
 
-    public function calculate($hier_id)
+    public function calculate(Request $request, $hier_id)
     {
-        $criteries = Criteria::where('id_hierarchies', $hier_id)->get();
-        foreach($criteries as $criteria){
-            //first
-            $arr[] = $criteria->priority;
-            $mult = array_product($arr);
-        }
-        dd($mult);
+//        $criteries = Criteria::where('id_hierarchies', $hier_id)->get();
+
+        $input = $request->input();
+        dd($input);
+
+
+
     }
 
 }

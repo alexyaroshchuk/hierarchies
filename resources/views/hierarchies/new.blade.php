@@ -9,7 +9,7 @@
                     <form id="createForm"
                           class="form-horizontal form-label-left"
                           method="POST"
-                          action="{{route('hierarchy-create', $hierarchy->id)}}">
+                          action="{{route('hierarchy-create')}}">
                         @csrf
                         <div class="card-body">
                             <div>
