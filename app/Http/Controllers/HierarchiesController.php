@@ -21,13 +21,13 @@ class HierarchiesController extends Controller
 
     public function create(Request $request)
     {
-        Hierarchy::insert([
+       $hierarchy = Hierarchy::create([
             'hierarchies_name' => $request->name_hierarchy,
             'id_user' => Auth::user()->id,
         ]);
-        $hier_id = Hierarchy::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->first()->id;
-
-        return redirect()->route('hierarchy-count', $hier_id)->with('hier_id');
+        $hierarchy->save();
+        $hier_id = $hierarchy->id;
+        return redirect()->route('alternative', $hier_id)->with('hier_id');
     }
 
     public function count($hier_id)

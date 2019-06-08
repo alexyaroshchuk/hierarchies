@@ -13,7 +13,7 @@
                         @csrf
                         <div class="card-body">
                             <div>
-                                <label>Number of hierarchy levels</label><br>
+                                <label>Количество уровней иерархии</label><br>
                                 <select id = "count_level" name="count">
                                     <option value="1" selected>1</option>
                                     <option value="2">2</option>
@@ -48,6 +48,14 @@
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Количество альтернатив</label><br>
+                                <select id = "count_alternative" name="count">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
                                 </select>
                             </div>
                             <br>

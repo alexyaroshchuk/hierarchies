@@ -37,3 +37,5 @@ Route::get('/alternative/{hier_id}', 'AlternativesController@new')->name('altern
 Route::post('/alternative/create/{hier_id}', 'AlternativesController@create')->name('alternative-create');
 
 Route::any('/calculate/{hier_id}', 'CriteriaController@calculate')->name('criteria-calculate');
+
+Route::any('/count/{hier_id}', 'CriteriaController@count')->name('criteria-count');

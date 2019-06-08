@@ -19,11 +19,9 @@ class AlternativesController extends Controller
     {
         $user = Auth::user();
 
-        $hierarchy = Hierarchy::where('id_user', $user->id)->get()->toArray();
-        $hierarchy = array_pop($hierarchy);
-        $input = $request->input();
+        $hierarchy = Hierarchy::where('id_user', $user->id)->latest();
 
-        $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
+        $input = $request->input();
 
         for ($i = 1; $i < count($input); $i++) {
             Alternative::create([
@@ -33,8 +31,6 @@ class AlternativesController extends Controller
             ]);
         }
 
-        $alternative = Alternative::where('id_hierarchies', $hier_id)->get()->toArray();
-
-        return redirect()->route('priority', $hier_id)->with('hier_id');
+        return redirect()->route('hierarchy-count', $hier_id)->with('hier_id');
     }
 }

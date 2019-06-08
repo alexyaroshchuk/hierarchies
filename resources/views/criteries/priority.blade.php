@@ -10,7 +10,7 @@
                           method="POST"
                           action="{{route('criteria-calculate', $hier_id)}}">
                         @csrf
-                    <div class="card-body">
+                        <div class="card-body">
                             <table id="example" class="display" style="width:100%">
                                 <thead>
                                 <tr>
@@ -26,17 +26,18 @@
                                         <tr>
                                             <td>{{$criteria[$i]['criteria_name']}}</td>
                                             @for($j=0; $j<count($criteria); $j++)
-                                                <td><input type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria[$i]['id'] . "|" . $criteria[$j]['id']}}"  @if($i>=$j) disabled @endif></td>
+                                                <td><input type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria[$i]['id'] . "|" . $criteria[$j]['id']}}"
+                                                    ></td>
                                             @endfor
                                         </tr>
                                     @endfor
                                 </tbody>
                             </table>
                     </div>
+                        <div>
+                            <button type="submit" class="btn btn-warning" role="button" aria-pressed="true">Next</button>
+                        </div>
                     </form>
-                    <div>
-                        <a href="{{route('criteria-calculate', $hier_id)}}" class="btn btn-warning" role="button" aria-pressed="true">Next</a>
-                    </div>
                 </div>
             </div>
         </div>
