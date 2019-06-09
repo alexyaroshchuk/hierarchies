@@ -276,14 +276,37 @@ $('document').ready(function () {
     if ($tBody.length > 0) {
       $tr = $tBody.find('tr');
       $tr.each(function (i, el) {
+        // Numeric element
         var $init = $(this).find('td').eq(i + 1).find('input');
+        var $notActive = $(this).find('td');
         $init.val(_NUMBER);
         $init.addClass('disabled');
-        var $notActive = $(this).find('td');
         $notActive.each(function (j, el) {
+          // Disabled element
           if (j !== 0 && j < i + 1) {
             $(this).find('input').addClass('disabled');
-            console.log($(this));
+          } // Active element
+
+
+          if (j !== 0 && j > i + 1) {
+            var elDisabled = null;
+            var elActive = null;
+            $(this).find('input').val(0);
+            $(this).find('input').on('keyup', function () {// elDisabled = [].concat();
+              // elActive = [].concat( ...$(el) );
+              // console.log( 'change', j);
+              // console.log( 'elActive', elActive);
+              // if( elDisabled && elActive ){
+              // 	console.log( 'elDisabled - ', elDisabled );
+              // 	console.log( 'elActive - ', elActive );
+              //
+              // 	elDisabled[j].val( elActive[j].val() )
+              //
+              // 	elDisabled.each(function(x,el){
+              // 		$(el).val( elActive[x].val() )
+              // 	})
+              // }
+            });
           }
         });
       });

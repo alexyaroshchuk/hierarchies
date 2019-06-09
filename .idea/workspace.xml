@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/assets/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/ui/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/ui/_input.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -133,11 +132,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/assets/js/common.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="160" column="45" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
+                <state relative-caret-position="220">
+                  <caret line="173" selection-start-line="173" selection-end-line="176" selection-end-column="70" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -190,10 +189,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_input.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_input.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/assets/sass/ui/_input.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
+                <state relative-caret-position="154">
                   <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
                 </state>
               </provider>
@@ -302,8 +301,8 @@
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/criteries/priority.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/js/common.js" />
         <option value="$PROJECT_DIR$/resources/assets/sass/ui/_input.scss" />
+        <option value="$PROJECT_DIR$/resources/assets/js/common.js" />
       </list>
     </option>
   </component>
@@ -585,7 +584,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105124000" />
+    <option name="totallyTimeSpent" value="110001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -926,20 +925,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/common.js">
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/ui/_input.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="160" column="45" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="154">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/ui/_input.scss">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="220">
+          <caret line="173" selection-start-line="173" selection-end-line="176" selection-end-column="70" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
