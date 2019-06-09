@@ -9,18 +9,17 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/common.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+
+    <header>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -57,7 +56,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                 document.getElementById('logout-ui').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -71,10 +70,15 @@
                 </div>
             </div>
         </nav>
+    </header>
+    <main class="py-4">
+        @yield('content')
+    </main>
+    <footer>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    </footer>
+
+    <!-- Scripts Custom-->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
