@@ -1,0 +1,18 @@
+.table{
+
+  &__header{
+	background-color: #f8f8f8;
+  }
+
+  &__header_text{
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-base;
+	line-height: 1.124rem;
+	font-weight: 600;
+	margin: 0;
+	text-decoration: none;
+	color: $c-text;
+	background-color: #f8f8f8;
+	border: 1px solid #fff;
+  }
+}

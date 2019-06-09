@@ -32,3 +32,11 @@
     color: $c-input-place;
   }
 }
+
+table {
+
+  & .input__custom:focus{
+    box-shadow: 0 0 0 0.1rem rgba(206, 206, 206, 0),
+    inset 0 0 0 0.1rem rgba(206, 206, 206, 0.9);
+  }
+}

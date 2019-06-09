@@ -13,9 +13,24 @@ body{
   font-family: $font-family-sans-serif;
   font-size: $font-size-base;
   line-height: 1.124rem;
-  color: $c-text;
   margin: 0;
   text-decoration: none;
+
+  &_gray{
+    color: $c-text-grayDr;
+  }
+}
+
+.text-big{
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  line-height: 1.124rem;
+  margin: 0;
+  text-decoration: none;
+
+  &_gray{
+    color: $c-text-grayDr;
+  }
 }
 
 .link{

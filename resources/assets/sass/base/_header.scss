@@ -1,3 +1,22 @@
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+
+  & .logo-svg {
+    width: 48px;
+    height: 45px;
+    fill: #fff;
+    transition: all 0.24s ease-in;
+  }
+
+  &:hover {
+    & .logo-svg {
+      fill: #1d2124;
+    }
+  }
+}
+
+
 .navbar{
   height: 64px;
   background-color: $c-header;
@@ -25,8 +44,8 @@
   transition: all 0.3s ease-out;
 
   &:hover{
-	color: $c-text;
-	box-shadow: 0px 2px 0px 0px $c-btn-green;
+    color: #fff;
+	box-shadow: 0px 2px 0px 0px #fff;
   }
 }
 

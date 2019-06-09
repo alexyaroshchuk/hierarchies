@@ -10,6 +10,12 @@
   border-radius: 1.25rem;
   transition: 0.24s ease-out;
 
+  &:focus,
+  &:active{
+	outline: none;
+	box-shadow: none;
+  }
+
   &_white{
 	color: #fff;
 	border: 0.2rem solid #fff;
@@ -31,6 +37,19 @@
 	text-decoration: none;
 	color: $c-btn-green;
 	border-color: $c-btn-green;
+	background-color: transparent;
+  }
+
+  &_yellow{
+	color: #fff;
+	border: 0.2rem solid transparent;
+	background-color: $c-btn-yellow;
+  }
+
+  &_yellow:hover{
+	text-decoration: none;
+	color: $c-btn-yellow;
+	border-color: $c-btn-yellow;
 	background-color: transparent;
   }
 

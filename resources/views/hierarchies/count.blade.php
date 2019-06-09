@@ -3,64 +3,66 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Количество уровней иерархии</div>
+            <div class="col-md-7">
+                <div class="card my-5">
+                    <div class="card-header">
+                        <p class="subtitle subtitle_green py-1">Количество уровней иерархии</p>
+                    </div>
                     <form id="createForm"
                           class="form-horizontal form-label-left"
                           method="POST"
                           action="{{route('hierarchy-count-save', $hier_id)}}">
                         @csrf
                         <div class="card-body">
-                            <div>
-                                <label>Количество уровней иерархии</label><br>
-                                <select id = "count_level" name="count">
+                            <div class="mb-4">
+                                <label class="text-big text-big_gray d-block mb-2">Количество уровней иерархии</label>
+                                <select id = "count_level" name="count" class="selectpicker">
                                     <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select>
                             </div>
-                            <br>
-                            <div id="count_first_div" class="count">
-                                <label>Количество критериев на уровне №1:</label><br>
-                                <select id = "count_first" name="count_first">
+
+                            <div id="count_first_div" class="count mb-4">
+                                <label class="text-big text-big_gray d-block mb-2">Количество критериев на уровне №1:</label>
+                                <select id = "count_first" name="count_first" class="selectpicker">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                            <br>
-                            <div id="count_second_div" class="count" style="display:none">
-                                <label id = "count_second">Количество критериев на уровне №2:</label><br>
-                                <select id = "count_second" name="count_second">
+
+                            <div id="count_second_div" class="count mb-4" style="display:none">
+                                <label id = "count_second" class="text-big text-big_gray d-block mb-2">Количество критериев на уровне №2:</label>
+                                <select id = "count_second" name="count_second" class="selectpicker">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                            <br>
-                            <div id="count_third_div" class="count" style="display:none">
-                                <label id = "count_third">Количество критериев на уровне №3:</label><br>
-                                <select id = "count_third" name="count_third">
+
+                            <div id="count_third_div" class="count mb-4" style="display:none">
+                                <label id = "count_third" class="text-big text-big_gray d-block mb-2">Количество критериев на уровне №3:</label>
+                                <select id = "count_third" name="count_third" class="selectpicker">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                            <div>
-                                <label>Количество альтернатив</label><br>
-                                <select id = "count_alternative" name="count">
+
+                            <div class="mb-4">
+                                <label class="text-big text-big_gray d-block mb-2">Количество альтернатив</label>
+                                <select id = "count_alternative" name="count" class="selectpicker">
                                     <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select>
                             </div>
-                            <br>
                             <div>
-                                <button type="submit" class="btn btn-warning" id="submit">Next</button>
+                                <button type="submit" class="btn-custom btn-custom_yellow" id="submit">Next</button>
                             </div>
                         </div>
                     </form>
