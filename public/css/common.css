@@ -149,6 +149,11 @@ body {
   box-shadow: 0 0 0 0.1rem rgba(206, 206, 206, 0.9);
 }
 
+.input__custom.disabled {
+  pointer-events: none;
+  background-color: rgba(76, 179, 175, 0.1) !important;
+}
+
 .input__custom::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #cbcecd;

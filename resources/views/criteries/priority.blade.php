@@ -23,7 +23,7 @@
                                     @endforeach
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="js-numeric">
                                     @for($i=0; $i<count($criteria); $i++)
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria[$i]['criteria_name']}}</td>

@@ -266,7 +266,24 @@ $('document').ready(function () {
       $(element).parent().addClass('active');
     });
   } // pop_up on click
+  // js-numeric
 
+
+  function getNumeric() {
+    var $tBody = $('#js-numeric');
+    var _NUMBER = 1;
+
+    if ($tBody.length > 0) {
+      $tr = $tBody.find('tr');
+      $tr.each(function (i, el) {
+        var $init = $(this).find('td').eq(i + 1).find('input');
+        $init.val(_NUMBER);
+        $init.addClass('disabled');
+      });
+    }
+  }
+
+  getNumeric(); // js-numeric
 });
 
 /***/ }),

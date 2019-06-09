@@ -140,4 +140,22 @@ $('document').ready(function(){
 		});
 	}
 	// pop_up on click
+
+	// js-numeric
+		function  getNumeric() {
+			const $tBody = $('#js-numeric');
+			const _NUMBER = 1;
+
+			if( $tBody.length > 0 ){
+				$tr = $tBody.find('tr');
+
+				$tr.each(function(i,el){
+					let $init = $(this).find('td').eq(i+1).find('input');
+					$init.val(_NUMBER);
+					$init.addClass('disabled');
+				})
+			}
+		}
+		getNumeric();
+	// js-numeric
 });
