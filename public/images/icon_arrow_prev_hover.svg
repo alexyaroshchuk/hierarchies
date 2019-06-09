@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6" height="9" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient y2="0.5" x2="1" y1="0.5" x1="0" id="SVGID_1_">
+   <stop stop-color="#F9A58C" offset="0"/>
+   <stop stop-color="#D66E6E" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <polygon transform="rotate(180, 2.5305, 4.6465)" id="svg_1" points="0.707,9 0,8.293 3.646,4.646 0,1 0.707,0.293 5.061,4.646 " fill="url(#SVGID_1_)"/>
+ </g>
+</svg>

@@ -2,9 +2,11 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Введите приоритеты</div>
+            <div class="col-md-10">
+                <div class="card my-5">
+                    <div class="card-header">
+                        <p class="subtitle subtitle_green py-1">Введите приоритеты</p>
+                    </div>
                     <form id="createForm"
                           class="form-horizontal form-label-left"
                           method="POST"
@@ -12,21 +14,21 @@
                         @csrf
                         <div class="card-body">
                             <table id="example" class="display" style="width:100%">
-                                <thead>
+                                <thead class="table__header">
                                 <tr>
 {{--                                    {{dd($criteria)}}--}}
-                                    <th>\</th>
+                                    <th class="px-4">#</th>
                                     @foreach($criteria as $cr)
-                                        <td>{{$cr['criteria_name']}}</td>
+                                        <td class="table__header_text py-3 px-2">{{$cr['criteria_name']}}</td>
                                     @endforeach
                                 </tr>
                                 </thead>
                                 <tbody>
                                     @for($i=0; $i<count($criteria); $i++)
                                         <tr>
-                                            <td>{{$criteria[$i]['criteria_name']}}</td>
+                                            <td class="table__header_text px-2">{{$criteria[$i]['criteria_name']}}</td>
                                             @for($j=0; $j<count($criteria); $j++)
-                                                <td><input type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria[$i]['id'] . "|" . $criteria[$j]['id']}}"
+                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria[$i]['id'] . "|" . $criteria[$j]['id']}}"
                                                     ></td>
                                             @endfor
                                         </tr>
@@ -34,8 +36,8 @@
                                 </tbody>
                             </table>
                     </div>
-                        <div>
-                            <button type="submit" class="btn btn-warning" role="button" aria-pressed="true">Next</button>
+                        <div class="card-footer">
+                            <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Next</button>
                         </div>
                     </form>
                 </div>
