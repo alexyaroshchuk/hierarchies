@@ -151,7 +151,7 @@ body {
 
 .input__custom.disabled {
   pointer-events: none;
-  background-color: rgba(76, 179, 175, 0.1) !important;
+  background-color: #f8f8f8 !important;
 }
 
 .input__custom::-webkit-input-placeholder {

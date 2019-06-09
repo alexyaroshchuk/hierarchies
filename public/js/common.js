@@ -279,6 +279,13 @@ $('document').ready(function () {
         var $init = $(this).find('td').eq(i + 1).find('input');
         $init.val(_NUMBER);
         $init.addClass('disabled');
+        var $notActive = $(this).find('td');
+        $notActive.each(function (j, el) {
+          if (j !== 0 && j < i + 1) {
+            $(this).find('input').addClass('disabled');
+            console.log($(this));
+          }
+        });
       });
     }
   }
