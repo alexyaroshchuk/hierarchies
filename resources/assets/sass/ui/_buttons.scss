@@ -1,0 +1,48 @@
+.btn-custom{
+  display: inline-block;
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.0525rem;
+  text-align: center;
+  padding: 0.75rem 2rem;
+  border-radius: 1.25rem;
+  transition: 0.24s ease-out;
+
+  &_white{
+	color: #fff;
+	border: 0.2rem solid #fff;
+	background-color: transparent;
+  }
+
+  &_white:hover{
+	background-color: rgba(23,23,23,0.05);
+	text-decoration: none;
+  }
+
+  &_green{
+	color: #fff;
+	border: 0.2rem solid transparent;
+	background-color: $c-btn-green;
+  }
+
+  &_green:hover{
+	text-decoration: none;
+	color: $c-btn-green;
+	border-color: $c-btn-green;
+	background-color: transparent;
+  }
+
+  &_green-br{
+	color: $c-btn-green;
+	border: 0.2rem solid $c-btn-green;
+	background-color: transparent;
+  }
+
+  &_green-br:hover{
+	text-decoration: none;
+	color: #fff;
+	background-color: $c-btn-green;
+  }
+}

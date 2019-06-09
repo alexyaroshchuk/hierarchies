@@ -91,3 +91,12 @@ $min_ss: 320;
 				 url('../fonts/#{$file}.svg?#webfont') format('svg');
 	}
 }
+
+@mixin absolute-c($top,$right,$bottom,$left){
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  margin: auto;
+}

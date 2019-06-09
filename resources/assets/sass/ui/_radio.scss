@@ -1,0 +1,8 @@
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after{
+  background-color: $c-checkbox-active;
+  border-radius: 0.25rem;
+}
+
+.custom-control-label{
+  user-select: none;
+}
