@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dca6736-b357-48b7-bfbd-5ed9b0b9bf6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/modules/_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/base/_default.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/base/_default.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/base/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/base/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/base/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/base/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/modules/_modules.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/modules/_modules.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/modules/_singin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/modules/_singin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/ui/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/ui/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/ui/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/ui/_input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/ui/_radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/ui/_radio.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +22,8 @@
           <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="182" column="58" selection-start-line="182" selection-start-column="58" selection-end-line="182" selection-end-column="58" />
+                <state relative-caret-position="143">
+                  <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
                   <folding>
                     <element signature="e#3809#3840#0#HTML" expanded="true" />
                     <element signature="e#5046#5096#0#HTML" expanded="true" />
@@ -68,7 +46,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_card.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_card.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/assets/sass/modules/_card.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="22">
@@ -86,11 +64,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-968">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
+                <state relative-caret-position="88">
+                  <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
                   <folding>
                     <element signature="e#3530#3561#0#HTML" expanded="true" />
                     <element signature="e#3858#3908#0#HTML" expanded="true" />
@@ -239,6 +217,7 @@
       <find>.wr-content-form</find>
       <find>dropdown-item</find>
       <find>card-header</find>
+      <find>pop_up_in</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -296,8 +275,6 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/ui/_radio.scss" />
         <option value="$PROJECT_DIR$/resources/assets/js/common.js" />
         <option value="$PROJECT_DIR$/resources/assets/sass/ui/_input.scss" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/modules/_singin.scss" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/modules/_modules.scss" />
@@ -307,6 +284,8 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/base/_default.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/ui/_buttons.scss" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
       </list>
     </option>
   </component>
@@ -573,12 +552,12 @@
       <workItem from="1559411808257" duration="2419000" />
       <workItem from="1559463852362" duration="12091000" />
       <workItem from="1560060877656" duration="2312000" />
-      <workItem from="1560067202162" duration="15943000" />
+      <workItem from="1560067202162" duration="16081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94661000" />
+    <option name="totallyTimeSpent" value="94799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -589,9 +568,9 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.16168328" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31672204" />
       <window_info anchor="bottom" id="RNConsole" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
@@ -821,38 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="182" column="58" selection-start-line="182" selection-start-column="58" selection-end-line="182" selection-end-column="58" />
-          <folding>
-            <element signature="e#3809#3840#0#HTML" expanded="true" />
-            <element signature="e#5046#5096#0#HTML" expanded="true" />
-            <element signature="e#5291#5310#0#HTML" expanded="true" />
-            <element signature="e#5628#5650#0#HTML" expanded="true" />
-            <element signature="e#9297#9316#0#HTML" expanded="true" />
-            <element signature="e#9354#9376#0#HTML" expanded="true" />
-            <element signature="e#6216#6238#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-968">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#3530#3561#0#HTML" expanded="true" />
-            <element signature="e#3858#3908#0#HTML" expanded="true" />
-            <element signature="e#5012#5031#0#HTML" expanded="true" />
-            <element signature="e#5069#5091#0#HTML" expanded="true" />
-            <element signature="e#5363#5386#0#HTML" expanded="true" />
-            <element signature="e#9034#9053#0#HTML" expanded="true" />
-            <element signature="e#9305#9327#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/modules/_singin.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -930,6 +877,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#3809#3840#0#HTML" expanded="true" />
+            <element signature="e#5046#5096#0#HTML" expanded="true" />
+            <element signature="e#5291#5310#0#HTML" expanded="true" />
+            <element signature="e#5628#5650#0#HTML" expanded="true" />
+            <element signature="e#9297#9316#0#HTML" expanded="true" />
+            <element signature="e#9354#9376#0#HTML" expanded="true" />
+            <element signature="e#6216#6238#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding>
+            <element signature="e#3530#3561#0#HTML" expanded="true" />
+            <element signature="e#3858#3908#0#HTML" expanded="true" />
+            <element signature="e#5012#5031#0#HTML" expanded="true" />
+            <element signature="e#5069#5091#0#HTML" expanded="true" />
+            <element signature="e#5363#5386#0#HTML" expanded="true" />
+            <element signature="e#9034#9053#0#HTML" expanded="true" />
+            <element signature="e#9305#9327#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

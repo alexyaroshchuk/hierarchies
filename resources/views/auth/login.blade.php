@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="pop_up_in">
+    <div class="pop_up_in my-5">
         <div class="pop_up_body">
             <div class="shade"></div>
             <div class="nav-pop_up" style="z-index: 2; width: 20%;">
