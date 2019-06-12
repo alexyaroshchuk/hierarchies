@@ -6,7 +6,7 @@
             <div class="col-md-7">
                 <div class="card my-5">
                     <div class="card-header">
-                        <p class="subtitle subtitle_green py-1">Количество уровней иерархии</p>
+                        <p class="subtitle subtitle_green py-1">ШАГ №3</p>
                     </div>
                     <form id="createForm"
                           class="form-horizontal form-label-left"
@@ -50,15 +50,6 @@
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="text-big text-big_gray d-block mb-2">Количество альтернатив</label>
-                                <select id = "count_alternative" name="count" class="selectpicker">
-                                    <option value="1" selected>1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
                                 </select>
                             </div>
                             <div>

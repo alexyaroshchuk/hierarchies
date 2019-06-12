@@ -6,7 +6,7 @@
             <div class="col-md-7">
                 <div class="card my-5">
                     <div class="card-header">
-                        <p class="subtitle subtitle_green">Enter hierarchy name</p>
+                        <p class="subtitle subtitle_green">Шаг №1</p>
                     </div>
                     <form id="createForm"
                           class="form-horizontal form-label-left"
@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="mb-4">
                                 <label id = "name_hierarchy" class="text-big text-big_gray d-block mb-3">
-                                    Enter hierarchy name
+                                    Введите название иерархии
                                 </label>
                                 <input id = "name_hierarchy"
                                        name="name_hierarchy"

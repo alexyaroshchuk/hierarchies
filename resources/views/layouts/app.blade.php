@@ -22,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand mr-2" href="{{ url('/') }}" title={{ config('app.name', 'Laravel') }}>
+                <a class="navbar-brand mr-2" href="{{ url('/home') }}" title={{ config('app.name', 'Laravel') }}>
 {{--                    {{ config('app.name', 'Laravel') }}--}}
                     <svg class="logo-svg" data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24,10h4a2,2,0,0,0,2-2V4a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2V5H19a2,2,0,0,0-2,2v8H14V12a2,2,0,0,0-2-2H4a2,2,0,0,0-2,2v8a2,2,0,0,0,2,2h8a2,2,0,0,0,2-2V17h3v8a2,2,0,0,0,2,2h3v1a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V24a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v1H19V17h3v1a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V14a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v1H19V7h3V8A2,2,0,0,0,24,10ZM12,20H4V12h8Zm12,4h4v4H24Zm0-10h4v4H24ZM24,4h4V8H24Z"></path>
