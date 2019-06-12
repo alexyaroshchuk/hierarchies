@@ -5,7 +5,7 @@
             <div class="col-md-7">
                 <div class="card my-5">
                     <div class="card-header">
-                        <p class="subtitle subtitle_green py-1">Enter alternatives name</p>
+                        <p class="subtitle subtitle_green py-1">ШАГ №2</p>
                     </div>
                     <div class="card-body">
                         <form method="POST"
@@ -21,7 +21,7 @@
                                         <input
                                                 name="1"
                                                 class="input__custom"
-                                                placeholder="Naming"
+                                                placeholder="Название"
                                         >
                                     </div>
                                     <div class="DynamicExtraField mb-3">
@@ -30,7 +30,7 @@
                                         <input
                                                 name="2"
                                                 class="input__custom"
-                                                placeholder="Naming"
+                                                placeholder="Название"
                                         >
                                     </div>
                                     <div class="DynamicExtraField mb-3">
@@ -39,7 +39,25 @@
                                         <input
                                                 name="3"
                                                 class="input__custom"
-                                                placeholder="Naming"
+                                                placeholder="Название"
+                                        >
+                                    </div>
+                                    <div class="DynamicExtraField mb-3">
+                                        <label for="DynamicExtraField">
+                                            <span class="text-big text-big_gray">Четвертая альтернатива</span></label>
+                                        <input
+                                                name="4"
+                                                class="input__custom"
+                                                placeholder="Название"
+                                        >
+                                    </div>
+                                    <div class="DynamicExtraField mb-3">
+                                        <label for="DynamicExtraField">
+                                            <span class="text-big text-big_gray">Пятая альтернатива</span></label>
+                                        <input
+                                                name="5"
+                                                class="input__custom"
+                                                placeholder="Название"
                                         >
                                     </div>
                                 </div>

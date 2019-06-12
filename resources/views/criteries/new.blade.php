@@ -5,7 +5,7 @@
             <div class="col-md-7">
                 <div class="card my-5">
                     <div class="card-header">
-                        <p class="subtitle subtitle_green py-1">Enter criteria name</p>
+                        <p class="subtitle subtitle_green py-1">Шаг №4</p>
                     </div>
                         <div class="card-body px-0">
                             <form method="POST"

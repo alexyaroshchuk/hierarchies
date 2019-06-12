@@ -408,7 +408,7 @@ table .input__custom:focus {
 
 .pop_up_body input[name=email] {
   background-color: #e7ebea;
-  background-image: url(/images/icon-email.svg?3ddaf89e19a3f3edcc6d31b46de0a72f);
+  background-image: url(/images/icon-email.svg?0ace76f4fbaaec46bb54a973da0c0008);
   background-repeat: no-repeat;
   background-position: calc(100% - 15px) center;
   background-size: 22px;

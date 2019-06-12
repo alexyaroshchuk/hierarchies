@@ -33,4 +33,17 @@ class AlternativesController extends Controller
 
         return redirect()->route('hierarchy-count', $hier_id)->with('hier_id');
     }
+
+
+    public function result($hier_id)
+    {
+        $vector = Alternative::where('id_hierarchies', $hier_id)->get();
+        return view('alternatives.result', compact('hier_id', 'vector'));
+    }
+
+    public function history()
+    {
+        $hierarchies = Hierarchy::where('id_user', Auth::id())->get();
+        return view('alternatives.history', compact('hierarchies'));
+    }
 }

@@ -342,7 +342,7 @@ $('document').ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\js\common.js */"./resources/assets/js/common.js");
+module.exports = __webpack_require__(/*! /home/alex/Dip/untitled2/resources/assets/js/common.js */"./resources/assets/js/common.js");
 
 
 /***/ })
