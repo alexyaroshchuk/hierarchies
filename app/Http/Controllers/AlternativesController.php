@@ -37,7 +37,8 @@ class AlternativesController extends Controller
 
     public function result($hier_id)
     {
-        return view('alternatives.result', compact('hier_id'));
+        $vector = Alternative::where('id_hierarchies', $hier_id)->get();
+        return view('alternatives.result', compact('hier_id', 'vector'));
     }
 
     public function history()
