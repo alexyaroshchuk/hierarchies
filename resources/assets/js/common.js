@@ -149,44 +149,60 @@ $('document').ready(function(){
 			if( $tBody.length > 0 ){
 
 				$tr = $tBody.find('tr');
-				$tr.each(function(i,el){
+
+				// row
+				$tr.each(function(i,row){
 
 					// Numeric element
-					let $init = $(this).find('td').eq(i+1).find('input');
-					let $notActive = $(this).find('td');
-					$init.val(_NUMBER);
-					$init.addClass('disabled');
+					let $td = $(this).find('td');
+					let $input = $td.eq(i+1).find('input');
 
-					$notActive.each(function(j,el){
+
+					$input.val(_NUMBER);
+					$input.addClass('disabled');
+
+					// td in row
+					$td.each(function(j,el){
 
 						// Disabled element
 						if( j !== 0 && j < i+1 ){
-							$(this).find('input').addClass('disabled');
+							$(this).find('input').addClass('disabled is-action');
+							$(this).find('input').parent().attr('title',_NUMBER + '/x' );
 						}
 
 						// Active element
 						if( j !== 0 && j > i+1 ){
-							let elDisabled = null;
-							let elActive = null;
+
 							$(this).find('input').val(0);
+							$(this).find('input').addClass('is-active');
 
 							$(this).find('input').on('keyup', function(){
-								// elDisabled = [].concat();
-								// elActive = [].concat( ...$(el) );
-								// console.log( 'change', j);
-								// console.log( 'elActive', elActive);
+								let elActive = null;
+								let elDisabled = null;
 
+								let isActive = document.querySelectorAll('#js-numeric .is-active');
+								let isAction = document.querySelectorAll('#js-numeric .is-action');
 
-								// if( elDisabled && elActive ){
-								// 	console.log( 'elDisabled - ', elDisabled );
-								// 	console.log( 'elActive - ', elActive );
-								//
-								// 	elDisabled[j].val( elActive[j].val() )
-								//
-								// 	elDisabled.each(function(x,el){
-								// 		$(el).val( elActive[x].val() )
-								// 	})
-								// }
+								// console.log('isActive - ', isActive);
+								// console.log('isAction - ', isAction);
+
+								isActive.forEach((input) => {
+									elActive = [].concat(...input.value)
+								});
+								isAction.forEach((input) => {
+									elDisabled = [].concat(...input.value)
+								});
+
+								elDisabled && elActive ?
+									isAction.forEach((action,i)=>{action.value = _NUMBER/isActive[i].value !== Infinity ?
+										(_NUMBER/isActive[i].value).toFixed(2) :
+										0
+									})
+									: null;
+
+								// console.log('elActive - ', elActive);
+								// console.log('elDisabled - ', elActive);
+
 							});
 						}
 					})
