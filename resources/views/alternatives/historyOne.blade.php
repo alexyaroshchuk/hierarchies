@@ -27,3 +27,6 @@
 		});
 	</script>
 @endpush
+
+{{--{{dd($alternative)}}--}}
+

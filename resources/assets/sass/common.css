@@ -49,6 +49,9 @@ body {
   .subtitle_green {
     color: #4cb3af; }
 
+#FieldCriteria .DynamicExtraField {
+  display: none; }
+
 .navbar-brand {
   margin: 0;
   padding: 0; }
