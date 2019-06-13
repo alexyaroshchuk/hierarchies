@@ -53,9 +53,9 @@ class AlternativesController extends Controller
         $criteria1 = Criteria::where('id_hierarchies', $hier_id)
             ->whereNull('id_parent')->get();
         $alternative = Alternative::where('id_hierarchies', $hier_id)
-            ->select('vector_priority')->get()->toArray();
+            ->select('vector_priority', 'name_alternatives')->get()->toArray();
         $name_alternative = Alternative::where('id_hierarchies', $hier_id)
-            ->select('name_alternatives	')->get()->toArray();
+            ->select('name_alternatives')->get()->toArray();
 
         $criteria2 = Criteria::where('id_hierarchies', $hier_id)
             ->where('id_parent', $hier_id)->get();
