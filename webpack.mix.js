@@ -13,10 +13,13 @@ const mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
 	.js('resources/assets/js/common.js', 'public/js')
-	.js('resources/assets/js/jquery.svgDoughnutChart.min.js', 'public/js')
+	.js('resources/assets/js/jquery.drawDoughnutChart.js', 'public/js')
+	.js('resources/assets/js/jquery.orgchart.min.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/common.scss', 'public/css');
 
-
+mix.styles([
+	'resources/assets/sass/jquery.orgchart.min.css'
+], 'public/css/jquery.orgchart.min.css');
 // mix.copyDirectory('assets/img', 'public/img');
 // mix.copyDirectory('assets/svg', 'public/svg');

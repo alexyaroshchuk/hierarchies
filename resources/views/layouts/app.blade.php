@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700&display=swap&subset=cyrillic" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Styles -->
+{{--    <link href="{{ asset('css/jquery.orgchart.min.css') }}" rel="stylesheet">--}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.3/css/jquery.orgchart.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
 </head>

@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 2:
-/*!******************************************************************!*\
-  !*** multi ./resources/assets/js/jquery.svgDoughnutChart.min.js ***!
-  \******************************************************************/
+/***/ 3:
+/*!*************************************************************!*\
+  !*** multi ./resources/assets/js/jquery.jquery.orgchart.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\FrontEnd\\OSPanel\\domains\\hierarchies\\resources\\assets\\js\\jquery.svgDoughnutChart.min.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\FrontEnd\\OSPanel\\domains\\hierarchies\\resources\\assets\\js\\jquery.jquery.orgchart.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
