@@ -211,4 +211,27 @@ $('document').ready(function(){
 		}
 		getNumeric();
 	// js-numeric
+
+	// Generation Alternative-create
+	function getAlternativeCreate(){
+		const AlternativeSelect = $('#AlternativeSelect');
+		const AlternativeInput = $('#FieldCriteria .DynamicExtraField');
+
+		$(AlternativeSelect).on('change',function() {
+			AlternativeInput.hide();
+			var str = "";
+			$(AlternativeSelect).find("option:selected").each(function () {
+				str += $(this).text() + " ";
+			});
+			console.log( parseInt(str) );
+			for (let i = 0; i < parseInt(str); i++){
+				AlternativeInput.eq(i).show();
+			}
+
+		})
+		.trigger( "change" );
+
+	}
+	getAlternativeCreate();
+	// Generation Alternative-create
 });

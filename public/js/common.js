@@ -331,6 +331,26 @@ $('document').ready(function () {
   }
 
   getNumeric(); // js-numeric
+  // Generation Alternative-create
+
+  function getAlternativeCreate() {
+    var AlternativeSelect = $('#AlternativeSelect');
+    var AlternativeInput = $('#FieldCriteria .DynamicExtraField');
+    $(AlternativeSelect).on('change', function () {
+      AlternativeInput.hide();
+      var str = "";
+      $(AlternativeSelect).find("option:selected").each(function () {
+        str += $(this).text() + " ";
+      });
+      console.log(parseInt(str));
+
+      for (var i = 0; i < parseInt(str); i++) {
+        AlternativeInput.eq(i).show();
+      }
+    }).trigger("change");
+  }
+
+  getAlternativeCreate(); // Generation Alternative-create
 });
 
 /***/ }),

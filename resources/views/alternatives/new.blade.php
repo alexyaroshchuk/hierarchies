@@ -8,12 +8,23 @@
                         <p class="subtitle subtitle_green py-1">ШАГ №2</p>
                     </div>
                     <div class="card-body">
-                        <form method="POST"
+                        <form
+                              method="POST"
                               class="form-horizontal form-label-left"
                               action="{{route('alternative-create', $hier_id)}}"
                               name="Form">
                             @csrf
                             <div class="card-body px-0">
+                                <lebel class="d-block mb-4">
+                                    <span class="text-big text-big_gray d-block mb-2">Количество альтернатив</span>
+                                    <select name="AlternativeSelect" id="AlternativeSelect" class="selectpicker">
+                                        <option value="1" selected>1</option>
+                                        <option value="1">2</option>
+                                        <option value="1">3</option>
+                                        <option value="1">4</option>
+                                        <option value="1">5</option>
+                                    </select>
+                                </lebel>
                                 <div id="FieldCriteria">
                                     <div class="DynamicExtraField mb-3">
                                         <label for="DynamicExtraField">
