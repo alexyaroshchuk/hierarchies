@@ -4,6 +4,8 @@
 	<div id="container"></div>
 	<div id="container2"></div>
 
+	{{dd($alternative)}}
+
 @endsection
 @push('scripts')
 	<script src="{{ asset('js/jquery.svgDoughnutChart.min.js') }}" ></script>
@@ -29,4 +31,3 @@
 @endpush
 
 {{--{{dd($alternative)}}--}}
-
