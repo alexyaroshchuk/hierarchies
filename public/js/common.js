@@ -331,6 +331,26 @@ $('document').ready(function () {
   }
 
   getNumeric(); // js-numeric
+  // Generation Alternative-create
+
+  function getAlternativeCreate() {
+    var AlternativeSelect = $('#AlternativeSelect');
+    var AlternativeInput = $('#FieldCriteria .DynamicExtraField');
+    $(AlternativeSelect).on('change', function () {
+      AlternativeInput.hide();
+      var str = "";
+      $(AlternativeSelect).find("option:selected").each(function () {
+        str += $(this).text() + " ";
+      });
+      console.log(parseInt(str));
+
+      for (var i = 0; i < parseInt(str); i++) {
+        AlternativeInput.eq(i).show();
+      }
+    }).trigger("change");
+  }
+
+  getAlternativeCreate(); // Generation Alternative-create
 });
 
 /***/ }),
@@ -342,7 +362,7 @@ $('document').ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/alex/Dip/untitled2/resources/assets/js/common.js */"./resources/assets/js/common.js");
+module.exports = __webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\js\common.js */"./resources/assets/js/common.js");
 
 
 /***/ })
