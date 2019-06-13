@@ -93,6 +93,14 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 // (function(){
 // 	'use strict';
 //
@@ -274,38 +282,47 @@ $('document').ready(function () {
     var _NUMBER = 1;
 
     if ($tBody.length > 0) {
-      $tr = $tBody.find('tr');
-      $tr.each(function (i, el) {
+      $tr = $tBody.find('tr'); // row
+
+      $tr.each(function (i, row) {
         // Numeric element
-        var $init = $(this).find('td').eq(i + 1).find('input');
-        var $notActive = $(this).find('td');
-        $init.val(_NUMBER);
-        $init.addClass('disabled');
-        $notActive.each(function (j, el) {
+        var $td = $(this).find('td');
+        var $input = $td.eq(i + 1).find('input');
+        $input.val(_NUMBER);
+        $input.addClass('disabled'); // td in row
+
+        $td.each(function (j, el) {
           // Disabled element
           if (j !== 0 && j < i + 1) {
-            $(this).find('input').addClass('disabled');
+            $(this).find('input').addClass('disabled is-action');
+            $(this).find('input').parent().attr('title', _NUMBER + '/x');
           } // Active element
 
 
           if (j !== 0 && j > i + 1) {
-            var elDisabled = null;
-            var elActive = null;
             $(this).find('input').val(0);
-            $(this).find('input').on('keyup', function () {// elDisabled = [].concat();
-              // elActive = [].concat( ...$(el) );
-              // console.log( 'change', j);
-              // console.log( 'elActive', elActive);
-              // if( elDisabled && elActive ){
-              // 	console.log( 'elDisabled - ', elDisabled );
-              // 	console.log( 'elActive - ', elActive );
-              //
-              // 	elDisabled[j].val( elActive[j].val() )
-              //
-              // 	elDisabled.each(function(x,el){
-              // 		$(el).val( elActive[x].val() )
-              // 	})
-              // }
+            $(this).find('input').addClass('is-active');
+            $(this).find('input').on('keyup', function () {
+              var elActive = null;
+              var elDisabled = null;
+              var isActive = document.querySelectorAll('#js-numeric .is-active');
+              var isAction = document.querySelectorAll('#js-numeric .is-action'); // console.log('isActive - ', isActive);
+              // console.log('isAction - ', isAction);
+
+              isActive.forEach(function (input) {
+                var _ref;
+
+                elActive = (_ref = []).concat.apply(_ref, _toConsumableArray(input.value));
+              });
+              isAction.forEach(function (input) {
+                var _ref2;
+
+                elDisabled = (_ref2 = []).concat.apply(_ref2, _toConsumableArray(input.value));
+              });
+              elDisabled && elActive ? isAction.forEach(function (action, i) {
+                action.value = _NUMBER / isActive[i].value !== Infinity ? (_NUMBER / isActive[i].value).toFixed(2) : 0;
+              }) : null; // console.log('elActive - ', elActive);
+              // console.log('elDisabled - ', elActive);
             });
           }
         });
