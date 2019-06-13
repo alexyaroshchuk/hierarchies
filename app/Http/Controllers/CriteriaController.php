@@ -19,12 +19,7 @@ class CriteriaController extends Controller
 
     public function create(Request $request, $hier_id)
     {
-        $user = Auth::user();
-
         $input = $request->input();
-//        dd($input);
-//        $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
-
         if(!isset($input['count_second_1'])) {
             for ($i = 1; $i < (count($input)); $i++) {
                 Criteria::create([
@@ -87,9 +82,15 @@ class CriteriaController extends Controller
         $criterios = array_chunk($prioritos, count($criteria));
 
         foreach ($criterios as $crit){
-            $result[] = array_product($crit);
+            $mults[] = array_product($crit);
         }
-        dd($result);
+	dd($mults);
+
+	
+	foreach ($mults as $mult){
+	    $vectors = pow($mult, 1/count($criteria));
+	}
+        dd($vectors);
         dd($priority, $criteria, $criterios);
         dd($hier_id);
     }

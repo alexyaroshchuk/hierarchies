@@ -400,7 +400,7 @@ table .input__custom:focus {
 
 .pop_up_body input[name=name] {
   background-color: #e7ebea;
-  background-image: url(/images/icon_name.svg?a73a6924f004800a71fc95d8dc967e78);
+  background-image: url(/images/icon_name.svg?07d8321ce69efa4bd8ab69d86ebd56dc);
   background-repeat: no-repeat;
   background-position: calc(100% - 17px) center;
   background-size: 17px;
@@ -417,7 +417,7 @@ table .input__custom:focus {
 .pop_up_body input[name=password],
 .pop_up_body input[name=password_confirmation] {
   background-color: #e7ebea;
-  background-image: url(/images/icon_password.svg?23bf4e81aabadf18840ae889004f97d9);
+  background-image: url(/images/icon_password.svg?5a4d04fa29b0f8720ce1f9baf29ef4a8);
   background-repeat: no-repeat;
   background-position: calc(100% - 17px) center;
   background-size: 17px;
@@ -551,7 +551,7 @@ i.btn-sign-in {
   height: 18px;
   display: block;
   margin: auto;
-  background: url(/images/icon_arrow_popup.svg?e60c35bd0d043d79f1fe205a1c54206c) no-repeat center;
+  background: url(/images/icon_arrow_popup.svg?2e1eb0da5d95c5cad429622cfe841776) no-repeat center;
 }
 
 i.icon-sign-in {
@@ -559,7 +559,7 @@ i.icon-sign-in {
   height: 55px;
   display: block;
   margin: auto;
-  background: url(/images/icon_sing_in.svg?edbc1d0a2e86e83a71723472d4b67b50) no-repeat center/contain;
+  background: url(/images/icon_sing_in.svg?3d936b939d9439a74af536f7f98e2c25) no-repeat center/contain;
 }
 
 i.icon-sign-add {
@@ -567,7 +567,7 @@ i.icon-sign-add {
   height: 55px;
   display: block;
   margin: auto;
-  background: url(/images/icon_sing_up.svg?ab35bb94201ac991876f9b38ff38861d) no-repeat center/contain;
+  background: url(/images/icon_sing_up.svg?c31be0915f41d516fc7fe2fe452e16d8) no-repeat center/contain;
 }
 
 .wr-btn.small-icon {

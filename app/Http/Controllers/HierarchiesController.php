@@ -13,11 +13,11 @@ class HierarchiesController extends Controller
         $this->middleware('auth');
     }
 
-    public function new()
-    {
-        $hierarchy = Hierarchy::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->first();
-        return view('hierarchies.new', compact('hierarchy'));
-    }
+        public function new()
+        {
+            $hierarchy = Hierarchy::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->first();
+            return view('hierarchies.new', compact('hierarchy'));
+        }
 
     public function create(Request $request)
     {
