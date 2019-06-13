@@ -54,9 +54,12 @@ class AlternativesController extends Controller
             ->whereNull('id_parent')->get();
         $alternative = Alternative::where('id_hierarchies', $hier_id)
             ->select('vector_priority')->get()->toArray();
+        $name_alternative = Alternative::where('id_hierarchies', $hier_id)
+            ->select('name_alternatives	')->get()->toArray();
+
         $criteria2 = Criteria::where('id_hierarchies', $hier_id)
             ->where('id_parent', $hier_id)->get();
         return view('alternatives.historyOne',
-            compact('alternative', 'hierarchies', 'criteria1', 'criteria2'));
+            compact('alternative', 'hierarchies', 'criteria1', 'criteria2', 'name_alternative'));
     }
 }
