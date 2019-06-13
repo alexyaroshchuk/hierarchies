@@ -42,3 +42,4 @@ Route::any('/count/{hier_id}', 'CriteriaController@count')->name('criteria-count
 
 Route::get('/result', 'AlternativesController@result')->name('result');
 Route::get('/history', 'AlternativesController@history')->name('history');
+Route::get('/history/one/{hier_id}', 'AlternativesController@historyOne')->name('history-one');

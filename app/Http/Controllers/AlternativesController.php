@@ -46,4 +46,11 @@ class AlternativesController extends Controller
         $hierarchies = Hierarchy::where('id_user', Auth::id())->get();
         return view('alternatives.history', compact('hierarchies'));
     }
+
+    public function historyOne()
+    {
+        $hier_id = Hierarchy::where('id_user', Auth::id())->get()->id;
+        $alternative = Alternative::where('id_hierarchies', $hier_id)->get();
+        return view('alternatives.historyOne', compact('alternative'));
+    }
 }
