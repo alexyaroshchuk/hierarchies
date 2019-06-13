@@ -2,6 +2,15 @@
 
 @section('content')
 	{{--<div id="container"></div>--}}
+    <div class="card-body">
+        <div class="mb-4">
+            @foreach($alternative as $alt)
+                <label class="text-big text-big_gray d-block mb-3">
+                   {{ $alt['name_alternatives'] }} -{{ $alt['vector_priority']/100 }}
+                </label>
+           @endforeach
+        </div>
+    </div>
 	<div class="container py-5 doughnutChart">
 		<div id="doughnutChart" class="chart"></div>
 	</div>
@@ -17,7 +26,7 @@
 	<script src="{{ asset('js/jquery.drawDoughnutChart.js') }}" ></script>
 	{{--<script src="{{ asset('js/jquery.orgchart.min.js') }}" ></script>--}}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.3/js/jquery.orgchart.min.js" defer></script>
-
+{{--   {{ dd($alternative)}}--}}
 	<script type="text/javascript" defer>
 		var data = {!! json_encode($alternative) !!};
 		console.log( data );
@@ -66,35 +75,35 @@
 
 		// TREE
 
-		$(function() {
-			var ds = {
-				'name': 'Lao Lao',
-				'title': 'general manager',
-				'children': [
-					{ 'name': 'Bo Miao', 'title': 'department manager' },
-					{ 'name': 'Su Miao', 'title': 'department manager',
-						'children': [
-							{ 'name': 'Tie Hua', 'title': 'senior engineer' },
-							{ 'name': 'Hei Hei', 'title': 'senior engineer',
-								'children': [
-									{ 'name': 'Pang Pang', 'title': 'engineer' },
-									{ 'name': 'Xiang Xiang', 'title': 'UE engineer' }
-								]
-							}
-						]
-					},
-					{ 'name': 'Hong Miao', 'title': 'department manager' },
-					{ 'name': 'Chun Miao', 'title': 'department manager' }
-				]
-			};
-
-			var oc = $('#chart-container').orgchart({
-				'data' : ds,
-				'depth': 2,
-				'nodeContent': 'title'
-			});
-
-		});
+		// $(function() {
+		// 	var ds = {
+		// 		'name': 'Lao Lao',
+		// 		'title': 'general manager',
+		// 		'children': [
+		// 			{ 'name': 'Bo Miao', 'title': 'department manager' },
+		// 			{ 'name': 'Su Miao', 'title': 'department manager',
+		// 				'children': [
+		// 					{ 'name': 'Tie Hua', 'title': 'senior engineer' },
+		// 					{ 'name': 'Hei Hei', 'title': 'senior engineer',
+		// 						'children': [
+		// 							{ 'name': 'Pang Pang', 'title': 'engineer' },
+		// 							{ 'name': 'Xiang Xiang', 'title': 'UE engineer' }
+		// 						]
+		// 					}
+		// 				]
+		// 			},
+		// 			{ 'name': 'Hong Miao', 'title': 'department manager' },
+		// 			{ 'name': 'Chun Miao', 'title': 'department manager' }
+		// 		]
+		// 	};
+        //
+		// 	var oc = $('#chart-container').orgchart({
+		// 		'data' : ds,
+		// 		'depth': 2,
+		// 		'nodeContent': 'title'
+		// 	});
+        //
+		// });
 
 	</script>
 @endpush
