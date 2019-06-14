@@ -59,12 +59,11 @@
 			else{
 				colorBG = '#FC4349';
 			}
-			console.log( colorBG );
 
 			arg.push(
 				{
 					title: data[i].name_alternatives,
-					value : data[i].vector_priority,
+					value : parseInt(data[i].vector_priority),
 					color: colorBG
 				}
 			)
