@@ -50,7 +50,6 @@
 			else{
 				colorBG = '#FC4349';
 			}
-			console.log( colorBG );
 
 			arg.push(
 				{
