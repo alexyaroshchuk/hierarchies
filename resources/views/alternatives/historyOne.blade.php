@@ -6,7 +6,7 @@
         <div class="mb-4">
             @foreach($alternative as $alt)
                 <label class="text-big text-big_gray d-block mb-3">
-                   {{ $alt['name_alternatives'] }} -{{ $alt['vector_priority']/100 }}
+                   {{ $alt['name_alternatives'] }} - {{ $alt['vector_priority']/100 }}
                 </label>
            @endforeach
         </div>
