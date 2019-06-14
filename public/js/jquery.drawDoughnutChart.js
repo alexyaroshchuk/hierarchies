@@ -409,7 +409,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/alex/Dip/untitled2/resources/assets/js/jquery.drawDoughnutChart.js */"./resources/assets/js/jquery.drawDoughnutChart.js");
+module.exports = __webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\js\jquery.drawDoughnutChart.js */"./resources/assets/js/jquery.drawDoughnutChart.js");
 
 
 /***/ })
