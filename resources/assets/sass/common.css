@@ -53,13 +53,14 @@ body {
   display: none; }
 
 .doughnutChart {
+  position: relative;
   min-height: 400px; }
 
 .chart {
   position: absolute;
   width: 300px;
   height: 300px;
-  top: 40%;
+  top: 70%;
   left: 50%;
   margin: -225px 0 0 -225px; }
   .chart svg {
