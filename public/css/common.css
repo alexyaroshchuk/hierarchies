@@ -214,9 +214,71 @@ body {
   opacity: 0.65;
 }
 
+.sc-column {
+  overflow-x: visible;
+}
+
 #chart-container {
   overflow-x: auto;
   overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.orgchart {
+  width: 100%;
+  background-image: none;
+  padding: 0;
+  position: relative;
+}
+
+.orgchart .node .title {
+  background-color: rgba(76, 179, 175, 0.85);
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orgchart .node .content {
+  border: 1px solid rgba(76, 179, 175, 0.85);
+}
+
+.orgchart .lines .rightLine,
+.orgchart .lines .leftLine {
+  border-color: rgba(76, 179, 175, 0.85);
+}
+
+.orgchart .lines .downLine {
+  background-color: rgba(76, 179, 175, 0.85);
+}
+
+.orgchart .node .content {
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+}
+
+#chart-container-2 .orgchart:before {
+  content: "";
+  height: 2px;
+  width: calc(100% - 126px);
+  background-color: rgba(76, 179, 175, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#chart-container-2 .orgchart {
+  transform: translateY(-23px);
 }
 
 /* Form */

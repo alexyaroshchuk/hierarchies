@@ -3,7 +3,7 @@
 @section('content')
 	{{--<div id="container"></div>--}}
     <div class="card-body">
-        <div class="mb-4">
+        <div class="container mb-4">
             @foreach($alternative as $alt)
                 <p class="text-big d-block mb-3">
                    {{ $alt['name_alternatives'] }} - <b>{{ $alt['vector_priority']/100 }}</b>
@@ -19,8 +19,9 @@
 		<div class="cones-chart"></div>
 	</div>
 
-	<div class="container-fluid py-5 position-relative">
-		<div id="chart-container"></div>
+	<div class="container-fluid pb-5 position-relative">
+		<div id="chart-container" class="chart-container"></div>
+		<div id="chart-container-2" class="chart-container"></div>
 	</div>
 
 {{--	{{dd($alternative)}}--}}
@@ -137,11 +138,6 @@
 				var criteria3 = [];
 				var alternative = [];
 
-				var test = 								[
-					{ 'name': 'Pang Pang', 'title': 'engineer' },
-					{ 'name': 'Xiang Xiang', 'title': 'UE engineer' }
-				];
-
 				if( _alternative.length > 0 ){
 					for(var i=0; i < _alternative.length; i++){
 						alternative.push({
@@ -160,9 +156,9 @@
 						})
 					}
 				}else if( !_criteria3 || _criteria3.length === 0 ){
-					criteria3.push({
-						"children": alternative
-					})
+					criteria3[0] = {
+						"children": []
+					}
 				}
 
 				if( _criteria2 && _criteria2.length > 0 ){
@@ -174,35 +170,32 @@
 						})
 					}
 				}else if( !_criteria2 || _criteria2.length === 0 ){
-					criteria2.push({
-						"children": alternative
-					})
+					criteria2[0] = {
+						"children": []
+					}
 				}
 
 				if( _criteria1.length > 0 ){
 					for(var i=0; i < _criteria1.length; i++){
-
 						criteria1.push({
 							"name": "Категория",
 							"title": _criteria1[i].criteria_name,
 							"children": criteria2
-
 						});
 
 					}
 				}
 
-
 				console.log( 'criteria1 - ', criteria1 );
 				console.log( 'criteria2 - ', criteria2 );
-				console.log( 'alternative - ', alternative );
+				console.log( 'alternative - ', Math.floor(alternative.length/2) );
 
 				var ds = {
 					'name': 'Иерархия',
 					'title': _hierarchies[0].hierarchies_name,
 					'children': criteria1
 
-/*						[
+/*					'children':	[
 						{ 'name': 'Bo Miao', 'title': 'department manager' },
 						{ 'name': 'Su Miao', 'title': 'department manager',
 							'children': [
@@ -217,10 +210,15 @@
 						},
 						{ 'name': 'Hong Miao', 'title': 'department manager' },
 						{ 'name': 'Chun Miao', 'title': 'department manager' }
-					]
-*/
+					]*/
 
 				};
+
+				var ds_alternative = {
+					'name': 'Иерархия',
+					'title': _hierarchies[0].hierarchies_name,
+					'children': alternative
+				}
 
 				var oc = $('#chart-container').orgchart({
 					'data' : ds,
@@ -228,13 +226,23 @@
 					'nodeContent': 'title'
 				});
 
-				$('.nodes tr').each(function(){
+				var oc_alternative = $('#chart-container-2').orgchart({
+					'data' : ds_alternative,
+					'depth': 2,
+					'nodeContent': 'title'
+				});
 
+				$('#chart-container .nodes tr').each(function(){
 					if( $(this).text() === "undefined" ){
-						$(this).hide()
-						console.log( $(this) )
+						$(this).hide();
 					}
 				});
+
+				var chartContainerW = $('#chart-container .orgchart table').width();
+				var chartContainer2W = $('#chart-container-2 .orgchart').css('width', chartContainerW + 'px')
+
+				$('#chart-container-2 table tr').eq(0).hide();
+
 			}
 			getChartTree();
 			// TREE
