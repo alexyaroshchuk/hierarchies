@@ -13,154 +13,25 @@
                                   action="{{route('criteria-create', $hier_id)}}"
                                   name="Form">
                                     @csrf
+                                <input type="hidden" name="count" value="{{ $count }}">
+                                <input type="hidden" name="count_first" value="{{ $count_first }}">
+                                <input type="hidden" name="count_second" value="{{ $count_second }}">
+                                <input type="hidden" name="count_third" value="{{ $count_third }}">
+                                <input type="hidden" name="count_fourth" value="{{ $count_fourth }}">
                                 <div class="card-body">
                                     <div id="FieldCriteria" class="mb-5">
-                                    @if($count == 1)
-                                        @if($count_first == 1)
                                         <div class="DynamicExtraField mb-4">
-                                            <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">
-                                                Название первого критерия
-                                            </label>
+                                            <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
                                             <input class="input__custom" name="count_first_1">
                                         </div>
-                                        @elseif($count_first == 2)
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">
-                                                    Название первого критерия
-                                                </label>
-                                                <input class="input__custom" name="count_first_1">
-                                            </div>
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">
-                                                    Название второго критерия
-                                                </label>
-                                                <input class="input__custom" name="count_first_2">
-                                            </div>
-                                        @elseif($count_first == 3)
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                <input class="input__custom" name="count_first_1">
-                                            </div>
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                <input class="input__custom" name="count_first_2">
-                                            </div>
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
-                                                <input class="input__custom" name="count_first_3">
-                                            </div>
-                                        @elseif($count_first == 4)
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                <input class="input__custom" name="count_first_1">
-                                            </div>
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                <input class="input__custom" name="count_first_2">
-                                            </div>
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
-                                                <input class="input__custom" name="count_first_3">
-                                            </div>
-                                            <div class="DynamicExtraField mb-4">
-                                                <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название четвертого критерия</label>
-                                                <input class="input__custom" name="count_first_4">
-                                            </div>
-                                        @endif
-                                        @elseif($count == 2)
-                                            @if($count_second == 1)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_second_1">
-                                                </div>
-                                            @elseif($count_second == 2)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_second_1">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                    <input class="input__custom" name="count_second_2">
-                                                </div>
-                                            @elseif($count_second == 3)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_second_1">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                    <input class="input__custom" name="count_second_2">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
-                                                    <input class="input__custom" name="count_second_3">
-                                                </div>
-                                            @elseif($count_second == 4)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_second_1">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                    <input class="input__custom" name="count_second_2">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
-                                                    <input class="input__custom" name="count_second_3">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название четвертого критерия</label>
-                                                    <input class="input__custom" name="count_second_4">
-                                                </div>
-                                            @endif
-                                        @elseif($count == 3)
-                                            @if($count_third == 1)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_third_1">
-                                                </div>
-                                            @elseif($count_third == 2)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_third_1">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                    <input class="input__custom" name="count_third_2">
-                                                </div>
-                                            @elseif($count_third == 3)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_third_1">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                    <input class="input__custom" name="count_third_2">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
-                                                    <input class="input__custom" name="count_third_3">
-                                                </div>
-                                            @elseif($count_third == 4)
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название первого критерия</label>
-                                                    <input class="input__custom" name="count_third_1">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
-                                                    <input class="input__custom" name="count_third_2">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
-                                                    <input class="input__custom" name="count_third_3">
-                                                </div>
-                                                <div class="DynamicExtraField mb-4">
-                                                    <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название четвертого критерия</label>
-                                                    <input class="input__custom" name="count_third_4">
-                                                </div>
-                                            @endif
-                                     @endif
-                                    </div>
+                                        <div class="DynamicExtraField mb-4">
+                                            <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название второго критерия</label>
+                                            <input class="input__custom" name="count_first_2">
+                                        </div>
+                                        <div class="DynamicExtraField mb-4">
+                                            <label for="DynamicExtraField mb-4" class="d-block text-big text-big_gray mb-2">Название третьего критерия</label>
+                                            <input class="input__custom" name="count_first_2">
+                                        </div>
                                     <div>
                                         <button type="submit" class="btn-custom btn-custom_yellow" id="submit">Далее</button>
                                     </div>

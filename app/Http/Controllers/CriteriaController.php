@@ -87,19 +87,30 @@ class CriteriaController extends Controller
         foreach ($vectors as $vector){
             $weight[] = $vector/$sum;
         }
-        dd($weight);
-}
+
+        return $weight;
+    }
 
     public function count($hier_id)
     {
-        $criteria = Criteria::where('id_hierarchies', $hier_id)->get()->toArray();
-
+        $criteria = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNull('id_parent')->get()->toArray();
         $priority = Priority::where('id_hierarchies', $hier_id)->get()->toArray();
+        $hier_weight = $this->vector_priority($priority, count($criteria));
 
 
-        $this->vector_priority($priority, count($criteria));
+        foreach ($criteria as $cr){
+            $id1[] = $cr['id'];
+        }
+        $criteria2 = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNotNull('id_parent')->get();
 
+        if(!isset($criteria2)) {
+            if (!in_array($criteria2->id_parent, $id1)) {
+                $criteria2 = 0;
+            }
+        }
 
-        dd($hier_id);
+        dd($hier_weight);
     }
 }

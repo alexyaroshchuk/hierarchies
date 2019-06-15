@@ -58,8 +58,19 @@ class AlternativesController extends Controller
         $name_alternative = Alternative::where('id_hierarchies', $hier_id)
             ->select('name_alternatives')->get()->toArray();
 
+        foreach ($criteria1 as $criteria){
+            $id1[] = $criteria['id'];
+        }
+
         $criteria2 = Criteria::where('id_hierarchies', $hier_id)
-            ->where('id_parent', $hier_id)->get();
+            ->whereNotNull('id_parent')->get();
+
+        if(!isset($criteria2)) {
+            if (!in_array($criteria2->id_parent, $id1)) {
+                $criteria2 = 0;
+            }
+        }
+
         return view('alternatives.historyOne',
             compact('alternative', 'hierarchies', 'criteria1', 'criteria2', 'name_alternative'));
     }

@@ -49,6 +49,45 @@ body {
   .subtitle_green {
     color: #4cb3af; }
 
+.navbar-brand {
+  margin: 0;
+  padding: 0; }
+  .navbar-brand .logo-svg {
+    width: 48px;
+    height: 45px;
+    fill: #fff;
+    transition: all 0.24s ease-in; }
+  .navbar-brand:hover .logo-svg {
+    fill: #1d2124; }
+
+.navbar {
+  height: 64px;
+  background-color: #4cb3af; }
+  .navbar .dropdown-menu {
+    transition: all 0.24s ease-out; }
+  .navbar .dropdown-menu.show {
+    margin: 0.85rem 0 0; }
+
+.navbar-light .navbar-nav .nav-link {
+  display: inline-block;
+  font-family: "Open+ Sans", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  padding: 0 0 0.25rem 0;
+  box-shadow: 0 0 0 0 transparent;
+  text-decoration: none;
+  transition: all 0.3s ease-out; }
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+    box-shadow: 0px 2px 0px 0px #fff; }
+
+.navbar-light .navbar-nav li:not(:last-child) {
+  margin-right: 0.85rem; }
+
+/* Pages */
 #FieldCriteria .DynamicExtraField {
   display: none; }
 
@@ -126,45 +165,10 @@ body {
 .chart path:hover {
   opacity: 0.65; }
 
-.navbar-brand {
-  margin: 0;
-  padding: 0; }
-  .navbar-brand .logo-svg {
-    width: 48px;
-    height: 45px;
-    fill: #fff;
-    transition: all 0.24s ease-in; }
-  .navbar-brand:hover .logo-svg {
-    fill: #1d2124; }
+#chart-container {
+  overflow-x: auto;
+  overflow-y: hidden; }
 
-.navbar {
-  height: 64px;
-  background-color: #4cb3af; }
-  .navbar .dropdown-menu {
-    transition: all 0.24s ease-out; }
-  .navbar .dropdown-menu.show {
-    margin: 0.85rem 0 0; }
-
-.navbar-light .navbar-nav .nav-link {
-  display: inline-block;
-  font-family: "Open+ Sans", sans-serif;
-  font-size: 0.85rem;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0;
-  padding: 0 0 0.25rem 0;
-  box-shadow: 0 0 0 0 transparent;
-  text-decoration: none;
-  transition: all 0.3s ease-out; }
-  .navbar-light .navbar-nav .nav-link:hover {
-    color: #fff;
-    box-shadow: 0px 2px 0px 0px #fff; }
-
-.navbar-light .navbar-nav li:not(:last-child) {
-  margin-right: 0.85rem; }
-
-/* Pages */
 /* Form */
 /* Form */
 .input__custom {
