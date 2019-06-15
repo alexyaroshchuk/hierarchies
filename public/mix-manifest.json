@@ -5,5 +5,5 @@
     "/js/common.js": "/js/common.js",
     "/js/jquery.drawDoughnutChart.js": "/js/jquery.drawDoughnutChart.js",
     "/js/jquery.orgchart.min.js": "/js/jquery.orgchart.min.js",
-    "/css/jquery.orgchart.min.css": "/css/jquery.orgchart.min.css"
+    "/css/vendor.css": "/css/vendor.css"
 }

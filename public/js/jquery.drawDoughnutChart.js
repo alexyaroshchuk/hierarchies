@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/jquery.drawDoughnutChart.js":
-/*!*********************************************************!*\
-  !*** ./resources/assets/js/jquery.drawDoughnutChart.js ***!
-  \*********************************************************/
+/***/ "./resources/assets/js/vendor/jquery.drawDoughnutChart.js":
+/*!****************************************************************!*\
+  !*** ./resources/assets/js/vendor/jquery.drawDoughnutChart.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -403,13 +403,13 @@
 /***/ }),
 
 /***/ 2:
-/*!***************************************************************!*\
-  !*** multi ./resources/assets/js/jquery.drawDoughnutChart.js ***!
-  \***************************************************************/
+/*!**********************************************************************!*\
+  !*** multi ./resources/assets/js/vendor/jquery.drawDoughnutChart.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\js\jquery.drawDoughnutChart.js */"./resources/assets/js/jquery.drawDoughnutChart.js");
+module.exports = __webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\js\vendor\jquery.drawDoughnutChart.js */"./resources/assets/js/vendor/jquery.drawDoughnutChart.js");
 
 
 /***/ })
