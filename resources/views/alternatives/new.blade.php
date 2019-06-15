@@ -19,10 +19,10 @@
                                     <span class="text-big text-big_gray d-block mb-2">Количество альтернатив</span>
                                     <select name="AlternativeSelect" id="AlternativeSelect" class="selectpicker">
                                         <option value="1" selected>1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="1">5</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </lebel>
                                 <div id="FieldCriteria">
