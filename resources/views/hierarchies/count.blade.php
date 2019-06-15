@@ -20,6 +20,7 @@
                                     <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
+                                    <option value="4">4</option>
                                 </select>
                             </div>
 
@@ -52,6 +53,18 @@
                                     <option value="4">4</option>
                                 </select>
                             </div>
+
+                            <div id="count_fourth_div" class="count mb-4" style="display:none">
+                                <label id = "count_fourth" class="text-big text-big_gray d-block mb-2">Количество критериев на уровне №3:</label>
+                                <select id = "count_fourth" name="count_fourth" class="selectpicker">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+
+
                             <div>
                                 <button type="submit" class="btn-custom btn-custom_yellow" id="submit">Next</button>
                             </div>
@@ -69,16 +82,25 @@
                 {
                     $("#count_second_div").hide();
                     $("#count_third_div").hide();
+                    $("#count_fourth_div").hide();
                 }
                 if ( this.value == '2')
                 {
                     $("#count_second_div").show();
                     $("#count_third_div").hide();
+                    $("#count_fourth_div").hide();
                 }
                 if ( this.value == '3')
                 {
                     $("#count_second_div").show();
                     $("#count_third_div").show();
+                    $("#count_fourth_div").hide();
+                }
+                if ( this.value == '4')
+                {
+                    $("#count_second_div").show();
+                    $("#count_third_div").show();
+                    $("#count_fourth_div").show();
                 }
             });
         });

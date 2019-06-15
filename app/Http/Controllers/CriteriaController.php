@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Alternative;
 use App\Criteria;
-use App\Hierarchy;
 use App\Priority;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,29 +67,39 @@ class CriteriaController extends Controller
         return redirect()->route('criteria-count', $hier_id)->with('hier_id');
     }
 
+    private function vector_priority($array, $count){
+
+        foreach ($array as $arr){
+        $prioritos[] = $arr['priority'];
+        }
+        $criterios = array_chunk($prioritos, $count);
+
+        foreach ($criterios as $crit){
+            $mults[] = array_product($crit);
+        }
+
+        foreach ($mults as $mult){
+            $vectors[] = pow($mult, 1/$count);
+        }
+
+        $sum = array_sum($vectors);
+
+        foreach ($vectors as $vector){
+            $weight[] = $vector/$sum;
+        }
+        dd($weight);
+}
 
     public function count($hier_id)
     {
         $criteria = Criteria::where('id_hierarchies', $hier_id)->get()->toArray();
 
         $priority = Priority::where('id_hierarchies', $hier_id)->get()->toArray();
-        foreach ($priority as $p){
-            $prioritos[] = $p['priority'];
-        }
 
-        $criterios = array_chunk($prioritos, count($criteria));
 
-        foreach ($criterios as $crit){
-            $mults[] = array_product($crit);
-        }
-	dd($mults);
+        $this->vector_priority($priority, count($criteria));
 
-	
-	foreach ($mults as $mult){
-	    $vectors = pow($mult, 1/count($criteria));
-	}
-        dd($vectors);
-        dd($priority, $criteria, $criterios);
+
         dd($hier_id);
     }
 }

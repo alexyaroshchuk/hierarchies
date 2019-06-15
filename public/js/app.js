@@ -39987,9 +39987,9 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\js\app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\FrontEnd\OSPanel\domains\hierarchies\resources\assets\sass\common.scss */"./resources/assets/sass/common.scss");
+__webpack_require__(/*! /home/alex/Dip/untitled2/resources/assets/js/app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! /home/alex/Dip/untitled2/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/alex/Dip/untitled2/resources/assets/sass/common.scss */"./resources/assets/sass/common.scss");
 
 
 /***/ })
