@@ -42,8 +42,9 @@ class HierarchiesController extends Controller
         $count_first = $request->count_first;
         $count_second = $request->count_second;
         $count_third = $request->count_third;
+        $count_fourth = $request->count_fourth;
 
         return view('criteries.new',
-            compact('hier_id', 'count', 'count_first', 'count_second', 'count_third'));
+            compact('hier_id', 'count', 'count_first', 'count_second', 'count_third', 'count_fourth'));
     }
 }
