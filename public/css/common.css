@@ -61,12 +61,22 @@ body {
 .subtitle {
   font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
   margin-bottom: 0;
 }
 
 .subtitle_green {
   color: #4cb3af;
+  text-transform: uppercase;
+}
+
+.subtitle_black {
+  color: #232323;
+  text-transform: none;
+}
+
+.border {
+  border: 0;
+  box-shadow: 0 0 2px 0 rgba(23, 23, 23, 0.1);
 }
 
 .navbar-brand {
@@ -123,7 +133,7 @@ body {
 
 /* Pages */
 
-#FieldCriteria .DynamicExtraField {
+#js-alternative .DynamicExtraField {
   display: none;
 }
 

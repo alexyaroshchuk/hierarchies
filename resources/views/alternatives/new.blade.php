@@ -9,6 +9,7 @@
                     </div>
                     <div class="card-body">
                         <form
+                              id="js-alternative"
                               method="POST"
                               class="form-horizontal form-label-left"
                               action="{{route('alternative-create', $hier_id)}}"
