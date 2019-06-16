@@ -38,7 +38,7 @@ class CriteriaController extends Controller
                 $criteria2 =  Criteria::create([
                     'criteria_name' => $input['count_second_' . $i],
                     'id_hierarchies' => $hier_id,
-                    'id_parent' => $critera1->id
+                    'id_parent' => 1
                 ]);
             }
         }
@@ -47,7 +47,7 @@ class CriteriaController extends Controller
                $criteria3 = Criteria::create([
                     'criteria_name' => $input['count_third_' . $i],
                     'id_hierarchies' => $hier_id,
-                    'id_parent' => $criteria2->id
+                    'id_parent' => 2
                 ]);
             }
         }
@@ -56,56 +56,13 @@ class CriteriaController extends Controller
                Criteria::create([
                     'criteria_name' => $input['count_fourth_' . $i],
                     'id_hierarchies' => $hier_id,
-                    'id_parent' => $criteria3->id
+                    'id_parent' => 3
                 ]);
             }
         }
 
-        $criteria = Criteria::where('id_hierarchies',  $hier_id)->get();
-        $hirarchy = Hierarchy::where('id', $hier_id)->first();
-        $alternative = Alternative::where('id_hierarchies',  $hier_id)->get();
-
-        $sum_all = count($criteria) + 1;
-
-        $criteria1 = Criteria::where('id_hierarchies', $hier_id)
-            ->whereNull('id_parent')->get();
-        foreach ($criteria1 as $criteria){
-            $id1[] = $criteria['id'];
-        }
-
-        $criteria2 = Criteria::where('id_hierarchies', $hier_id)
-            ->whereNotNull('id_parent')->get();
-        if(!isset($criteria2)) {
-            if (!in_array($criteria2->id_parent, $id1)) {
-                $criteria2 = 0;
-            }
-        }
-        foreach ($criteria2 as $criteria){
-            $id2[] = $criteria['id'];
-        }
-
-        $criteria3 = Criteria::where('id_hierarchies', $hier_id)
-            ->whereNotNull('id_parent')->get();
-        if(!isset($criteria3)) {
-            if (!in_array($criteria3->id_parent, $id1)) {
-                $criteria3 = 0;
-            }
-        }
-        foreach ($criteria3 as $criteria){
-            $id3[] = $criteria['id'];
-        }
-
-        $criteria4 = Criteria::where('id_hierarchies', $hier_id)
-            ->whereNotNull('id_parent')->get();
-        if(!isset($criteria4)) {
-            if (!in_array($criteria4->id_parent, $id1)) {
-                $criteria4 = 0;
-            }
-        }
-
         return redirect()->route('priority', $hier_id)
-            ->with('hier_id', 'sum_all', 'hirarchy', 'alternative',
-                'criteria1', 'criteria2', 'criteria3', 'criteria4' );
+            ->with('hier_id');
     }
 
     public function priority($hier_id)
@@ -115,7 +72,25 @@ class CriteriaController extends Controller
         $criteria = Criteria::where('id_hierarchies',  $hier_id)->get()->toArray();
 
 
-        return view('criteries.priority', compact(['criteria', 'hier_id']));
+        $criteria = Criteria::where('id_hierarchies',  $hier_id)->get();
+        $hirarchy = Hierarchy::where('id', $hier_id)->first();
+        $alternative = Alternative::where('id_hierarchies',  $hier_id)->get();
+
+        $criteria1 = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNull('id_parent')->get();
+
+        $criteria2 = Criteria::where('id_hierarchies', $hier_id)
+            ->where('id_parent', 1)->get();
+
+        $criteria3 = Criteria::where('id_hierarchies', $hier_id)
+            ->where('id_parent', 2)->get();
+
+        $criteria4 = Criteria::where('id_hierarchies', $hier_id)
+            ->where('id_parent', 3)->get();
+
+
+        return view('criteries.priority', compact(['criteria', 'hier_id', 'sum_all', 'hirarchy', 'alternative',
+            'criteria1', 'criteria2', 'criteria3', 'criteria4' ]));
     }
 
 
@@ -176,17 +151,8 @@ class CriteriaController extends Controller
         $hier_weight = $this->vector_priority($priority, count($criteria));
 
 
-        foreach ($criteria as $cr){
-            $id1[] = $cr['id'];
-        }
         $criteria2 = Criteria::where('id_hierarchies', $hier_id)
-            ->whereNotNull('id_parent')->get();
-
-        if(!isset($criteria2)) {
-            if (!in_array($criteria2->id_parent, $id1)) {
-                $criteria2 = 0;
-            }
-        }
+            ->where('id_parent', 1)->get();
 
         dd($hier_weight);
     }
