@@ -20,8 +20,12 @@
 	</div>
 
 	<div class="container-fluid pb-5 position-relative">
-		<div id="chart-container" class="chart-container"></div>
-		<div id="chart-container-2" class="chart-container"></div>
+		<div id="chart-_criteria1" class="chart-container"></div>
+		<div id="chart-_criteria2" class="chart-container"></div>
+		<div id="chart-_criteria3" class="chart-container"></div>
+		<div id="chart-_criteria4" class="chart-container"></div>
+		<div id="chart-_criteria5" class="chart-container"></div>
+		<div id="chart-alternative" class="chart-container"></div>
 	</div>
 
 {{--	{{dd($alternative)}}--}}
@@ -41,7 +45,7 @@
 			var _criteria2 = {!! json_encode($criteria2) !!};
 			var _criteria3 = null;
 			var _criteria4 = null;
-			var _criteria5 = null;
+			var _criteria5 = null
 
 			console.log( '_alternative - ', _alternative );
 			console.log( '_hierarchies - ', _hierarchies );
@@ -136,6 +140,8 @@
 				var criteria1 = [];
 				var criteria2 = [];
 				var criteria3 = [];
+				var criteria4 = [];
+				var criteria5 = [];
 				var alternative = [];
 
 				if( _alternative.length > 0 ){
@@ -147,17 +153,33 @@
 					}
 				}
 
+				if( _criteria5 && _criteria5.length > 0 ){
+					for(var i=0; i < _criteria5.length; i++){
+						criteria5.push({
+							"name": "Категория",
+							"title": _criteria5[i].criteria_name,
+						});
+
+					}
+				}
+
+				if( _criteria4 && _criteria4.length > 0 ){
+					for(var i=0; i < _criteria4.length; i++){
+						criteria4.push({
+							"name": "Категория",
+							"title": _criteria4[i].criteria_name,
+						});
+
+					}
+				}
+
 				if( _criteria3 && _criteria3.length > 0 ){
 					for(var i=0; i < _criteria3.length; i++){
 						criteria3.push({
 							"name": "Категория",
 							"title": _criteria3[i].criteria_name,
-							"children": criteria2
-						})
-					}
-				}else if( !_criteria3 || _criteria3.length === 0 ){
-					criteria3[0] = {
-						"children": []
+						});
+
 					}
 				}
 
@@ -166,51 +188,53 @@
 						criteria2.push({
 							"name": "Категория",
 							"title": _criteria2[i].criteria_name,
-							"children": _criteria3
-						})
-					}
-				}else if( !_criteria2 || _criteria2.length === 0 ){
-					criteria2[0] = {
-						"children": []
-					}
-				}
-
-				if( _criteria1.length > 0 ){
-					for(var i=0; i < _criteria1.length; i++){
-						criteria1.push({
-							"name": "Категория",
-							"title": _criteria1[i].criteria_name,
-							"children": criteria2
 						});
 
 					}
 				}
 
-				console.log( 'criteria1 - ', criteria1 );
-				console.log( 'criteria2 - ', criteria2 );
-				console.log( 'alternative - ', Math.floor(alternative.length/2) );
+				if( _criteria1 && _criteria1.length > 0 ){
+					for(var i=0; i < _criteria1.length; i++){
+						criteria1.push({
+							"name": "Категория",
+							"title": _criteria1[i].criteria_name,
+						});
 
-				var ds = {
+					}
+				}
+
+				var ds_criteria5 = {
+					'name': 'Иерархия',
+					'title': _hierarchies[0].hierarchies_name,
+					'children': criteria5
+
+				};
+
+				var ds_criteria4 = {
+					'name': 'Иерархия',
+					'title': _hierarchies[0].hierarchies_name,
+					'children': criteria4
+
+				};
+
+				var ds_criteria3 = {
+					'name': 'Иерархия',
+					'title': _hierarchies[0].hierarchies_name,
+					'children': criteria3
+
+				};
+
+				var ds_criteria2 = {
+					'name': 'Иерархия',
+					'title': _hierarchies[0].hierarchies_name,
+					'children': criteria2
+
+				};
+
+				var ds_criteria1 = {
 					'name': 'Иерархия',
 					'title': _hierarchies[0].hierarchies_name,
 					'children': criteria1
-
-/*					'children':	[
-						{ 'name': 'Bo Miao', 'title': 'department manager' },
-						{ 'name': 'Su Miao', 'title': 'department manager',
-							'children': [
-								{ 'name': 'Tie Hua', 'title': 'senior engineer' },
-								{ 'name': 'Hei Hei', 'title': 'senior engineer',
-									'children': [
-										{ 'name': 'Pang Pang', 'title': 'engineer' },
-										{ 'name': 'Xiang Xiang', 'title': 'UE engineer' }
-									]
-								}
-							]
-						},
-						{ 'name': 'Hong Miao', 'title': 'department manager' },
-						{ 'name': 'Chun Miao', 'title': 'department manager' }
-					]*/
 
 				};
 
@@ -218,30 +242,68 @@
 					'name': 'Иерархия',
 					'title': _hierarchies[0].hierarchies_name,
 					'children': alternative
-				}
+				};
 
-				var oc = $('#chart-container').orgchart({
-					'data' : ds,
-					'depth': 2,
-					'nodeContent': 'title'
-				});
+				// init graf
 
-				var oc_alternative = $('#chart-container-2').orgchart({
-					'data' : ds_alternative,
-					'depth': 2,
-					'nodeContent': 'title'
-				});
+				if( criteria5 .length > 0)
+					$('#chart-_criteria3').orgchart({
+						'data' : ds_criteria5,
+						'depth': 2,
+						'nodeContent': 'title'
+					});
 
-				$('#chart-container .nodes tr').each(function(){
-					if( $(this).text() === "undefined" ){
-						$(this).hide();
-					}
-				});
+				if( criteria4 .length > 0)
+					$('#chart-_criteria3').orgchart({
+						'data' : ds_criteria4,
+						'depth': 2,
+						'nodeContent': 'title'
+					});
 
-				var chartContainerW = $('#chart-container .orgchart table').width();
-				var chartContainer2W = $('#chart-container-2 .orgchart').css('width', chartContainerW + 'px')
+				if( criteria3 .length > 0)
+					$('#chart-_criteria3').orgchart({
+						'data' : ds_criteria3,
+						'depth': 2,
+						'nodeContent': 'title'
+					});
 
-				$('#chart-container-2 table tr').eq(0).hide();
+				if( criteria2 .length > 0)
+					$('#chart-_criteria2').orgchart({
+						'data' : ds_criteria2,
+						'depth': 2,
+						'nodeContent': 'title'
+					});
+
+				if( criteria1 .length > 0)
+					$('#chart-_criteria1').orgchart({
+						'data' : ds_criteria1,
+						'depth': 2,
+						'nodeContent': 'title'
+					});
+
+				if( alternative .length > 0)
+					$('#chart-alternative').orgchart({
+						'data' : ds_alternative,
+						'depth': 2,
+						'nodeContent': 'title'
+					});
+
+				// init graf
+
+				// $('.chart-container .nodes tr').each(function(){
+				// 	if( $(this).text() === "undefined" ){
+				// 		$(this).hide();
+				// 	}
+				// });
+
+				console.log( $('#chart-alternative table tr') )
+
+				// hidden first td (table)
+				$('#chart-_criteria2 table tr').eq(0).hide();
+				$('#chart-_criteria3 table tr').eq(0).hide();
+				$('#chart-_criteria4 table tr').eq(0).hide();
+				$('#chart-_criteria5 table tr').eq(0).hide();
+				$('#chart-alternative table tr').eq(0).hide();
 
 			}
 			getChartTree();

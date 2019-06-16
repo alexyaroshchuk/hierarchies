@@ -138,7 +138,7 @@
                                         @endif
                                     </div>
 
-                                    <div>
+                                    <div class="mt-4">
                                         <button type="submit" class="btn-custom btn-custom_yellow" id="submit">Далее</button>
                                     </div>
                             </form>

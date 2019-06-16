@@ -95,11 +95,27 @@
 }
 
 .orgchart{
-  width: 100%;
+  min-height: auto;
+  width: auto;
   background-image: none;
   padding: 0;
 
   position: relative;
+
+  &::before{
+	content: '';
+	height: 20px;
+	width: calc(100% - 126px);
+	background-color: transparent;
+	border-bottom: 2px solid rgba(76, 179, 175, 0.85);
+	border-left: 2px solid rgba(76, 179, 175, 0.85);
+	border-right: 2px solid rgba(76, 179, 175, 0.85);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+  }
 }
 
 .orgchart .node .title{
@@ -135,16 +151,8 @@
   justify-content: center;
 }
 
-#chart-container-2 .orgchart:before{
-  content: '';
-  height: 2px;
-  width: calc(100% - 126px);
-  background-color: rgba(76, 179, 175, 0.85);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+#chart-alternative .orgchart::before{
+  display: none;
 }
 
 #chart-container-2 .orgchart{
