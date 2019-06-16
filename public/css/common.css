@@ -133,6 +133,10 @@ body {
 
 /* Pages */
 
+.is-action {
+  opacity: 0.75;
+}
+
 #js-alternative .DynamicExtraField {
   display: none;
 }

@@ -143,21 +143,22 @@ $('document').ready(function(){
 
 	// js-numeric
 		function  getNumeric() {
-			const $tBody = $('#js-numeric');
+			const $tBody = $('.form-horizontal');
 			const _NUMBER = 1;
 
-			if( $tBody.length > 0 ){
+			$tBody.each(function(i,el){
 
-				$tr = $tBody.find('tr');
+				let self = $(this);
+				$tr = $(this).find('tr');
 
 				// row
 				$tr.each(function(i,row){
 
 					// Numeric element
 					let $td = $(this).find('td');
-					let $input = $td.eq(i+1).find('input');
+					let $input = $td.eq(i).find('input');
 
-
+					$input.addClass('is-equator');
 					$input.val(_NUMBER);
 					$input.addClass('disabled');
 
@@ -165,49 +166,85 @@ $('document').ready(function(){
 					$td.each(function(j,el){
 
 						// Disabled element
-						if( j !== 0 && j < i+1 ){
+						if( j !== 0 && j < i ){
 							$(this).find('input').addClass('disabled is-action');
 							$(this).find('input').parent().attr('title',_NUMBER + '/x' );
 						}
 
 						// Active element
-						if( j !== 0 && j > i+1 ){
+						if( j !== 0 && j > i ){
 
 							$(this).find('input').val(0);
 							$(this).find('input').addClass('is-active');
 
 							$(this).find('input').on('keyup', function(){
-								let elActive = null;
-								let elDisabled = null;
+								let self_event = $(this);
 
-								let isActive = document.querySelectorAll('#js-numeric .is-active');
-								let isAction = document.querySelectorAll('#js-numeric .is-action');
+								let arrayActive = [];
+								let arrayDisabled = [];
 
-								// console.log('isActive - ', isActive);
-								// console.log('isAction - ', isAction);
+								let isActive = $(self).find('.is-active');
+								let isDisabled = $(self).find('.is-action');
 
-								isActive.forEach((input) => {
-									elActive = [].concat(...input.value)
-								});
-								isAction.forEach((input) => {
-									elDisabled = [].concat(...input.value)
-								});
+								let self_tr = $(self).find('tr');
+								let self_td = $(self_tr).eq(1).find('td');
 
-								elDisabled && elActive ?
-									isAction.forEach((action,i)=>{action.value = _NUMBER/isActive[i].value !== Infinity ?
-										(_NUMBER/isActive[i].value).toFixed(2) :
-										0
+								for(var i = 1; i < self_td.length; i++){
+
+									for(var j = 1; j < self_tr.length; j++){
+										let input = $(self_tr).eq(j).find('td').eq(i).find('input');
+
+										if( !$(input).hasClass('is-active') && !$(input).hasClass('is-equator') ){
+											let input_disabled = $(self_tr).eq(j).find('td').eq(i).find('input');
+											arrayDisabled.push( input_disabled.val() )
+										}
+
+										if( $(input).hasClass('is-active') ){
+
+											let input_active = $(self_tr).eq(j).find('td').eq(i).find('input');
+											arrayActive.push(  input_active.val() )
+										}
+
+									}
+
+									// for(var j = 1; j < self_td.length; j++){
+									// 	console.log('input - ', $(self_td).eq(i).val());
+									//
+									// 	let input_val = $(self_td).eq(i).val();
+									// 	arrayActive = [].concat(... input_val);
+									//
+									// }
+								}
+
+
+								console.log('arrayActive - ', arrayActive);
+								console.log('arrayDisabled - ', arrayDisabled);
+
+								// arrayDisabled && arrayActive ?
+								// 	isDisabled.forEach((action,i)=>{action.value = _NUMBER/isActive[i].value !== Infinity ?
+								// 		(_NUMBER/isActive[i].value).toFixed(2) :
+								// 		0
+								// 	})
+								// 	: null;
+
+								arrayDisabled && arrayActive ?
+									$(arrayActive).each( function(i,input) {
+
+										isDisabled[i].value =
+											(_NUMBER/arrayActive[i] !== Infinity) ?
+											(_NUMBER/arrayActive[i]).toFixed(3) :
+											0
 									})
-									: null;
+								: null;
 
-								// console.log('elActive - ', elActive);
-								// console.log('elDisabled - ', elActive);
 
 							});
 						}
 					})
 				})
-			}
+			})
+
+
 		}
 		getNumeric();
 	// js-numeric

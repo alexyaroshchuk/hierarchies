@@ -50,7 +50,7 @@
                                         </div>
                                         @endif
                                         @if($count == 2 || $count == 3 || $count == 4)
-                                        <div class="col-md-6 border py-3 px-3">
+                                        <div class="col-md-6 py-3 px-3">
                                             <p class="subtitle subtitle_black py-1 mb-3">Введите название критериев для уровня №2</p>
                                             @if($count_second == 1 || $count_second == 2 || $count_second == 3 || $count_second == 4)
                                             <div class="DynamicExtraField mb-4">
@@ -79,7 +79,7 @@
                                         </div>
                                         @endif
                                         @if($count == 3 || $count == 4 )
-                                        <div class="col-md-6 border py-3 px-3">
+                                        <div class="col-md-6 py-3 px-3">
                                             <p class="subtitle subtitle_black py-1 mb-3">Введите название критериев для уровня №3</p>
                                             @if($count_third == 1 || $count_third == 2 || $count_third == 3 || $count_third == 4)
                                             <div class="DynamicExtraField mb-4">
