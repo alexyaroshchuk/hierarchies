@@ -25,7 +25,7 @@
                                 >
                             </div>
                             <div>
-                                <button type="submit" class="btn-custom btn-custom_yellow" id="submit">Next</button>
+                                <button type="submit" class="btn-custom btn-custom_yellow" id="submit">Далее</button>
                             </div>
                         </div>
                     </form>

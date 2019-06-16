@@ -37,7 +37,7 @@
                             </table>
                     </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Next</button>
+                            <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Далее</button>
                         </div>
                     </form>
                 </div>
