@@ -53,10 +53,20 @@ body{
 .subtitle{
   font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
   margin-bottom: 0;
 
   &_green{
     color: $c-text-green;
+    text-transform: uppercase;
   }
+
+  &_black{
+    color: #232323;
+    text-transform: none;
+  }
+}
+
+.border{
+  border: 0;
+  box-shadow: 0 0 2px 0 rgba(23,23,23,0.1);
 }
