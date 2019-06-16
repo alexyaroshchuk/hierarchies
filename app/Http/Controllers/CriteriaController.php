@@ -18,14 +18,47 @@ class CriteriaController extends Controller
     public function create(Request $request, $hier_id)
     {
         $input = $request->input();
-        if(!isset($input['count_second_1'])) {
-            for ($i = 1; $i < (count($input)); $i++) {
-                Criteria::create([
+        $count = $request->count;
+        $count_first = $request->count_first;
+        $count_second = $request->count_second;
+        $count_third = $request->count_third;
+        $count_fourth = $request->count_fourth;
+        if($count == 1 || $count == 2 || $count == 3 || $count == 4) {
+            for ($i = 1; $i <= $count_first; $i++) {
+                $critera1 = Criteria::create([
                     'criteria_name' => $input['count_first_' . $i],
                     'id_hierarchies' => $hier_id,
                 ]);
             }
         }
+        if($count == 2 || $count == 3 || $count == 4) {
+            for ($i = 1; $i <= $count_second; $i++) {
+                $criteria2 =  Criteria::create([
+                    'criteria_name' => $input['count_second_' . $i],
+                    'id_hierarchies' => $hier_id,
+                    'id_parent' => $critera1->id
+                ]);
+            }
+        }
+        if($count == 3 || $count == 4) {
+            for ($i = 1; $i <= $count_third; $i++) {
+               $criteria3 = Criteria::create([
+                    'criteria_name' => $input['count_third_' . $i],
+                    'id_hierarchies' => $hier_id,
+                    'id_parent' => $criteria2->id
+                ]);
+            }
+        }
+        if($count == 4) {
+            for ($i = 1; $i <= $count_fourth; $i++) {
+               Criteria::create([
+                    'criteria_name' => $input['count_fourth_' . $i],
+                    'id_hierarchies' => $hier_id,
+                    'id_parent' => $criteria3->id
+                ]);
+            }
+        }
+
         $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
 
         return redirect()->route('priority', $hier_id)->with('hier_id');
