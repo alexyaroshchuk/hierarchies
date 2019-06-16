@@ -24,7 +24,7 @@ class AlternativesController extends Controller
         $input = $request->input();
         $count = $request->AlternativeSelect;
 
-        for ($i = 1; $i < $count; $i++) {
+        for ($i = 1; $i <= $count; $i++) {
             Alternative::create([
                 'name_alternatives' => $input[$i],
                 'id_hierarchies' => $hier_id,
