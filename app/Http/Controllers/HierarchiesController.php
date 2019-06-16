@@ -32,7 +32,6 @@ class HierarchiesController extends Controller
 
     public function count($hier_id)
     {
-//        $hierarchy = Hierarchy::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->first();
         return view('hierarchies.count', compact('hier_id'));
     }
 

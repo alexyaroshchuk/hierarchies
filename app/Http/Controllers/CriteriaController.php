@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Alternative;
 use App\Criteria;
+use App\Hierarchy;
 use App\Priority;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,9 +61,51 @@ class CriteriaController extends Controller
             }
         }
 
-        $criteria = Criteria::where('id_hierarchies',  $hier_id)->first();
+        $criteria = Criteria::where('id_hierarchies',  $hier_id)->get();
+        $hirarchy = Hierarchy::where('id', $hier_id)->first();
+        $alternative = Alternative::where('id_hierarchies',  $hier_id)->get();
 
-        return redirect()->route('priority', $hier_id)->with('hier_id');
+        $sum_all = count($criteria) + 1;
+
+        $criteria1 = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNull('id_parent')->get();
+        foreach ($criteria1 as $criteria){
+            $id1[] = $criteria['id'];
+        }
+
+        $criteria2 = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNotNull('id_parent')->get();
+        if(!isset($criteria2)) {
+            if (!in_array($criteria2->id_parent, $id1)) {
+                $criteria2 = 0;
+            }
+        }
+        foreach ($criteria2 as $criteria){
+            $id2[] = $criteria['id'];
+        }
+
+        $criteria3 = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNotNull('id_parent')->get();
+        if(!isset($criteria3)) {
+            if (!in_array($criteria3->id_parent, $id1)) {
+                $criteria3 = 0;
+            }
+        }
+        foreach ($criteria3 as $criteria){
+            $id3[] = $criteria['id'];
+        }
+
+        $criteria4 = Criteria::where('id_hierarchies', $hier_id)
+            ->whereNotNull('id_parent')->get();
+        if(!isset($criteria4)) {
+            if (!in_array($criteria4->id_parent, $id1)) {
+                $criteria4 = 0;
+            }
+        }
+
+        return redirect()->route('priority', $hier_id)
+            ->with('hier_id', 'sum_all', 'hirarchy', 'alternative',
+                'criteria1', 'criteria2', 'criteria3', 'criteria4' );
     }
 
     public function priority($hier_id)
