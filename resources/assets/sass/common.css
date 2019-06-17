@@ -95,6 +95,9 @@ body {
   margin-right: 0.85rem; }
 
 /* Pages */
+.is-action {
+  opacity: 0.75; }
+
 #js-alternative .DynamicExtraField {
   display: none; }
 
