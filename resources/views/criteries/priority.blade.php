@@ -28,7 +28,7 @@
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria1[$i]['criteria_name']}}</td>
                                             @for($j=0; $j<count($criteria1); $j++)
-                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria1[$i]['id'] . "|" . $criteria1[$j]['id']}}"
+                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{"crit1 " . $cr['criteria_name'] . " " . $criteria1[$i]['id'] . "|" . $criteria1[$j]['id']}}"
                                                     ></td>
                                             @endfor
                                         </tr>
@@ -37,7 +37,7 @@
                             </table>
                         </div>
 
-                        @if($criteria2 != null)
+                        @if(count($criteria2) != 0)
                             @foreach($criteria1 as $cr1)
                             <div class="card-body">
                                 <table id="example" class="display" style="width:100%">
@@ -54,8 +54,7 @@
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria2[$i]['criteria_name']}}</td>
                                             @for($j=0; $j<count($criteria2); $j++)
-                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria2[$i]['id'] . "|" . $criteria2[$j]['id']}}"
-                                                    ></td>
+                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{ "crit2 " . $cr1['criteria_name'] . " " . $criteria2[$i]['id'] . "|" . $criteria2[$j]['id']}}"></td>
                                             @endfor
                                         </tr>
                                     @endfor
@@ -80,7 +79,7 @@
                                             <tr>
                                                 <td class="table__header_text px-2">{{$alternative[$i]['criteria_name']}}</td>
                                                 @for($j=0; $j<count($alternative); $j++)
-                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$alternative[$i]['id'] . "|" . $alternative[$j]['id']}}"
+                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{"alt " . $cr1['criteria_name'] . " " . $alternative[$i]['id'] . "|" . $alternative[$j]['id']}}"
                                                         ></td>
                                                 @endfor
                                             </tr>
@@ -90,8 +89,6 @@
                                 </div>
                             @endforeach
                         @endif
-
-
 
                         @if(count($criteria3) != 0  && count($criteria2) != 0)
                             @foreach($criteria2 as $cr2)
@@ -110,7 +107,7 @@
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria3[$i]['criteria_name']}}</td>
                                             @for($j=0; $j<count($criteria3); $j++)
-                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria3[$i]['id'] . "|" . $criteria3[$j]['id']}}"
+                                                <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{"crit3 " . $cr2['criteria_name'] . " " . $criteria3[$i]['id'] . "|" . $criteria3[$j]['id']}}"
                                                     ></td>
                                             @endfor
                                         </tr>
@@ -136,7 +133,7 @@
                                             <tr>
                                                 <td class="table__header_text px-2">{{$alternative[$i]['name_alternatives']}}</td>
                                                 @for($j=0; $j<count($alternative); $j++)
-                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$alternative[$i]['id'] . "|" . $alternative[$j]['id']}}"
+                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{"alt "  . $cr2['criteria_name'] . " " . $alternative[$i]['id'] . "|" . $alternative[$j]['id']}}"
                                                         ></td>
                                                 @endfor
                                             </tr>
@@ -146,7 +143,6 @@
                                 </div>
                             @endforeach
                         @endif
-
 
                         @if(count($criteria4) != 0 && count($criteria3) != 0)
                             @foreach($criteria3 as $cr3)
@@ -165,7 +161,7 @@
                                             <tr>
                                                 <td class="table__header_text px-2">{{$criteria4[$i]['name_alternatives']}}</td>
                                                 @for($j=0; $j<count($criteria4); $j++)
-                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$criteria4[$i]['id'] . "|" . $criteria4[$j]['id']}}"
+                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{"crit4 " . $cr3['criteria_name'] . " "  . $criteria4[$i]['id'] . "|" . $criteria4[$j]['id']}}"
                                                         ></td>
                                                 @endfor
                                             </tr>
@@ -191,7 +187,7 @@
                                             <tr>
                                                 <td class="table__header_text px-2">{{$alternative[$i]['name_alternatives']}}</td>
                                                 @for($j=0; $j<count($alternative); $j++)
-                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{$alternative[$i]['id'] . "|" . $alternative[$j]['id']}}"
+                                                    <td><input class="input__custom" type="text"  id="row-{{$i}}-{{$j}}" name="{{"alt " . $cr3['criteria_name'] . " " . $alternative[$i]['id'] . "|" . $alternative[$j]['id']}}"
                                                         ></td>
                                                 @endfor
                                             </tr>
@@ -201,6 +197,7 @@
                                 </div>
                             @endforeach
                         @endif
+
                         <div class="card-footer">
                             <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Далее</button>
                         </div>

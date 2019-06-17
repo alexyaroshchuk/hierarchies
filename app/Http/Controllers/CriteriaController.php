@@ -99,6 +99,8 @@ class CriteriaController extends Controller
 
         $input = Input::except('_token');
 
+        dd($input);
+
         $value = array_values($input);
         $arr = array_keys($input);
 
