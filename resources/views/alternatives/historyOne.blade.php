@@ -45,12 +45,7 @@
 			var _criteria2 = {!! json_encode($criteria2) !!};
 			var _criteria3 = null;
 			var _criteria4 = null;
-			var _criteria5 = null
-
-			console.log( '_alternative - ', _alternative );
-			console.log( '_hierarchies - ', _hierarchies );
-			console.log( '_criteria1 - ', _criteria1 );
-			console.log( '_criteria2 - ', _criteria2 );
+			var _criteria5 = null;
 
 			// pie chart
 			function getDoughnutChart(data){
