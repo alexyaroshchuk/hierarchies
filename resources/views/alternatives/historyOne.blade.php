@@ -6,7 +6,7 @@
         <div class="container mb-4">
             @foreach($alternative as $alt)
                 <p class="text-big d-block mb-3">
-                   {{ $alt['name_alternatives'] }} - <b>{{ $alt['vector_priority']/100 }}</b>
+                   {{ $alt['name_alternatives'] }} - <b>{{ $alt['vector_priority'] }}%</b>
                 </p>
            @endforeach
         </div>
@@ -151,7 +151,7 @@
 				if( _criteria5 && _criteria5.length > 0 ){
 					for(var i=0; i < _criteria5.length; i++){
 						criteria5.push({
-							"name": "Категория",
+							"name": "Критерий",
 							"title": _criteria5[i].criteria_name,
 						});
 
@@ -161,7 +161,7 @@
 				if( _criteria4 && _criteria4.length > 0 ){
 					for(var i=0; i < _criteria4.length; i++){
 						criteria4.push({
-							"name": "Категория",
+							"name": "Критерий",
 							"title": _criteria4[i].criteria_name,
 						});
 
@@ -171,7 +171,7 @@
 				if( _criteria3 && _criteria3.length > 0 ){
 					for(var i=0; i < _criteria3.length; i++){
 						criteria3.push({
-							"name": "Категория",
+							"name": "Критерий",
 							"title": _criteria3[i].criteria_name,
 						});
 
@@ -181,7 +181,7 @@
 				if( _criteria2 && _criteria2.length > 0 ){
 					for(var i=0; i < _criteria2.length; i++){
 						criteria2.push({
-							"name": "Категория",
+							"name": "Критерий",
 							"title": _criteria2[i].criteria_name,
 						});
 
@@ -191,7 +191,7 @@
 				if( _criteria1 && _criteria1.length > 0 ){
 					for(var i=0; i < _criteria1.length; i++){
 						criteria1.push({
-							"name": "Категория",
+							"name": "Критерий",
 							"title": _criteria1[i].criteria_name,
 						});
 

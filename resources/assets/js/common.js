@@ -143,27 +143,30 @@ $('document').ready(function(){
 
 	// js-numeric
 		function  getNumeric() {
-			const $tBody = $('.form-horizontal');
+			const $tBody = $('.js-numeric');
 			const _NUMBER = 1;
 
-			$tBody.each(function(i,el){
+			$tBody.each(function(){
 
 				let self = $(this);
-				$tr = $(this).find('tr');
+				let $tr = $(self).find('tr');
+
+				console.log( $tr )
 
 				// row
-				$tr.each(function(i,row){
+				$tr.each(function(i){
 
 					// Numeric element
 					let $td = $(this).find('td');
 					let $input = $td.eq(i).find('input');
 
-					$input.addClass('is-equator');
+					console.log( $input )
+
+					$input.addClass('disabled is-equator');
 					$input.val(_NUMBER);
-					$input.addClass('disabled');
 
 					// td in row
-					$td.each(function(j,el){
+					$td.each(function(j){
 
 						// Disabled element
 						if( j !== 0 && j < i ){
@@ -178,7 +181,7 @@ $('document').ready(function(){
 							$(this).find('input').addClass('is-active');
 
 							$(this).find('input').on('keyup', function(){
-								let self_event = $(this);
+								// let self_event = $(this);
 
 								let arrayActive = [];
 								let arrayDisabled = [];

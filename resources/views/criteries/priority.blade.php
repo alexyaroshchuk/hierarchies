@@ -14,7 +14,7 @@
                         @csrf
 
                         <div class="card-body">
-                            <table id="example" class="display" style="width:100%">
+                            <table id="example" class="display js-numeric" style="width:100%">
                                 <thead class="table__header">
                                 <tr>
                                     <th class="px-4">#</th>
@@ -23,7 +23,7 @@
                                     @endforeach
                                 </tr>
                                 </thead>
-                                <tbody id="js-numeric">
+                                <tbody>
                                     @for($i=0; $i<count($criteria1); $i++)
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria1[$i]['criteria_name']}}</td>
@@ -40,7 +40,7 @@
                         @if(count($criteria2) != 0)
                             @foreach($criteria1 as $cr1)
                             <div class="card-body">
-                                <table id="example" class="display" style="width:100%">
+                                <table id="example" class="display js-numeric" style="width:100%">
                                     <thead class="table__header">
                                     <tr>
                                         <th class="px-4">#</th>
@@ -49,7 +49,7 @@
                                         @endforeach
                                     </tr>
                                     </thead>
-                                    <tbody id="js-numeric">
+                                    <tbody>
                                     @for($i=0; $i<count($criteria2); $i++)
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria2[$i]['criteria_name']}}</td>
@@ -65,7 +65,7 @@
                         @else
                             @foreach($criteria1 as $cr1)
                                 <div class="card-body">
-                                    <table id="example" class="display" style="width:100%">
+                                    <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
                                             <th class="px-4">#</th>
@@ -74,7 +74,7 @@
                                             @endforeach
                                         </tr>
                                         </thead>
-                                        <tbody id="js-numeric">
+                                        <tbody>
                                         @for($i=0; $i<count($alternative); $i++)
                                             <tr>
                                                 <td class="table__header_text px-2">{{$alternative[$i]['criteria_name']}}</td>
@@ -93,7 +93,7 @@
                         @if(count($criteria3) != 0  && count($criteria2) != 0)
                             @foreach($criteria2 as $cr2)
                             <div class="card-body">
-                                <table id="example" class="display" style="width:100%">
+                                <table id="example" class="display js-numeric" style="width:100%">
                                     <thead class="table__header">
                                     <tr>
                                         <th class="px-4">#</th>
@@ -102,7 +102,7 @@
                                         @endforeach
                                     </tr>
                                     </thead>
-                                    <tbody id="js-numeric">
+                                    <tbody>
                                     @for($i=0; $i<count($criteria3); $i++)
                                         <tr>
                                             <td class="table__header_text px-2">{{$criteria3[$i]['criteria_name']}}</td>
@@ -119,7 +119,7 @@
                         @elseif(count($criteria3) == 0 && count($criteria2) != 0)
                             @foreach($criteria2 as $cr2)
                                 <div class="card-body">
-                                    <table id="example" class="display" style="width:100%">
+                                    <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
                                             <th class="px-4">#</th>
@@ -128,7 +128,7 @@
                                             @endforeach
                                         </tr>
                                         </thead>
-                                        <tbody id="js-numeric">
+                                        <tbody>
                                         @for($i=0; $i<count($alternative); $i++)
                                             <tr>
                                                 <td class="table__header_text px-2">{{$alternative[$i]['name_alternatives']}}</td>
@@ -147,7 +147,7 @@
                         @if(count($criteria4) != 0 && count($criteria3) != 0)
                             @foreach($criteria3 as $cr3)
                                 <div class="card-body">
-                                    <table id="example" class="display" style="width:100%">
+                                    <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
                                             <th class="px-4">#</th>
@@ -156,7 +156,7 @@
                                             @endforeach
                                         </tr>
                                         </thead>
-                                        <tbody id="js-numeric">
+                                        <tbody>
                                         @for($i=0; $i<count($criteria4); $i++)
                                             <tr>
                                                 <td class="table__header_text px-2">{{$criteria4[$i]['name_alternatives']}}</td>
@@ -173,7 +173,7 @@
                         @elseif(count($criteria4) == 0 && count($criteria3) != 0)
                             @foreach($criteria3 as $cr3)
                                 <div class="card-body">
-                                    <table id="example" class="display" style="width:100%">
+                                    <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
                                             <th class="px-4">#</th>
@@ -182,7 +182,7 @@
                                             @endforeach
                                         </tr>
                                         </thead>
-                                        <tbody id="js-numeric">
+                                        <tbody>
                                         @for($i=0; $i<count($alternative); $i++)
                                             <tr>
                                                 <td class="table__header_text px-2">{{$alternative[$i]['name_alternatives']}}</td>
@@ -202,9 +202,6 @@
                             <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Далее</button>
                         </div>
                     </form>
-
-
-
                 </div>
             </div>
         </div>
