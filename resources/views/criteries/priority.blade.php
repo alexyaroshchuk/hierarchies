@@ -14,7 +14,7 @@
                         @csrf
 
                         <div class="card-body">
-                            <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                            <p class="subtitle subtitle_black py-1 mb-3">{{$hirarchy->hierarchies_name}}</p>
                             <table id="example" class="display js-numeric" style="width:100%">
                                 <thead class="table__header">
                                 <tr>
@@ -41,7 +41,7 @@
                         @if(count($criteria2) != 0)
                             @foreach($criteria1 as $cr1)
                             <div class="card-body">
-                                <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                                <p class="subtitle subtitle_black py-1 mb-3">{{$cr1->criteria_name}}</p>
                                 <table id="example" class="display js-numeric" style="width:100%">
                                     <thead class="table__header">
                                     <tr>
@@ -67,7 +67,7 @@
                         @else
                             @foreach($criteria1 as $cr1)
                                 <div class="card-body">
-                                    <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                                    <p class="subtitle subtitle_black py-1 mb-3">$cr1->criteria_name</p>
                                     <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
@@ -96,7 +96,7 @@
                         @if(count($criteria3) != 0  && count($criteria2) != 0)
                             @foreach($criteria2 as $cr2)
                             <div class="card-body">
-                                <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                                <p class="subtitle subtitle_black py-1 mb-3">{{$cr2->criteria_name}}</p>
                                 <table id="example" class="display js-numeric" style="width:100%">
                                     <thead class="table__header">
                                     <tr>
@@ -123,7 +123,7 @@
                         @elseif(count($criteria3) == 0 && count($criteria2) != 0)
                             @foreach($criteria2 as $cr2)
                                 <div class="card-body">
-                                    <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                                    <p class="subtitle subtitle_black py-1 mb-3">{{$cr2->criteria_name}}</p>
                                     <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
@@ -152,7 +152,7 @@
                         @if(count($criteria4) != 0 && count($criteria3) != 0)
                             @foreach($criteria3 as $cr3)
                                 <div class="card-body">
-                                    <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                                    <p class="subtitle subtitle_black py-1 mb-3">{{$cr23->criteria_name}}</p>
                                     <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
@@ -179,7 +179,7 @@
                         @elseif(count($criteria4) == 0 && count($criteria3) != 0)
                             @foreach($criteria3 as $cr3)
                                 <div class="card-body">
-                                    <p class="subtitle subtitle_black py-1 mb-3">Заголовок матрицы</p>
+                                    <p class="subtitle subtitle_black py-1 mb-3">{{$cr3->criteria_name}}</p>
                                     <table id="example" class="display js-numeric" style="width:100%">
                                         <thead class="table__header">
                                         <tr>
@@ -209,8 +209,6 @@
                             <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Далее</button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
