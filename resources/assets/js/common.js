@@ -142,132 +142,74 @@ $('document').ready(function(){
 	// pop_up on click
 
 	// js-numeric
-		function  getNumeric() {
-			const $tBody = $('.js-numeric');
-			const _NUMBER = 1;
+	function  getNumeric() {
+		const $tBody = $('.js-numeric');
+		const _NUMBER = 1;
 
-			$tBody.each(function(){
+		$tBody.each(function(){
 
-				let self = $(this);
-				let $tr = $(self).find('tr');
+			let self = $(this);
+			let $tr = self.find('tr');
 
-				// row
-				$tr.each(function(i){
+			// row
+			$tr.each(function(i){
 
-					// Numeric element
-					let $td = $(this).find('td');
-					let $input = $td.eq(i).find('input');
+				// Numeric element
+				let $td = $(this).find('td');
+				let $input = $td.eq(i).find('input');
 
-					$input.addClass('disabled is-equator');
-					$input.val(_NUMBER);
+				$input.val(_NUMBER);
+				$input.addClass('disabled is-equator');
 
-					// td in row
-					$td.each(function(j){
+				// td in row
+				$td.each(function(j){
 
-						// Disabled element
-						if( j !== 0 && j < i ){
-							$(this).find('input').addClass('disabled is-action');
-							$(this).find('input').parent().attr('title',_NUMBER + '/x' );
-						}
+					// Disabled element
+					if( j !== 0 && j < i ){
+						$(this).find('input').addClass('disabled is-action');
+						$(this).find('input').parent().attr('title',_NUMBER + '/x' );
+					}
 
-						// Active element
-						if( j !== 0 && j > i ){
+					// Active element
+					if( j !== 0 && j > i ){
 
-							$(this).find('input').val(0);
-							$(this).find('input').addClass('is-active');
+						$(this).find('input').val(0);
+						$(this).find('input').addClass('is-active');
 
-							$(this).find('input').on('keyup', function(){
-								// let self_event = $(this);
+						$(this).find('input').on('keyup', function(){
+							let elActive = [];
+							let elDisabled = [];
 
-								let arrayActive = [];
-								let arrayDisabled = [];
+							let isActive = $(self).find('.is-active');
+							let isDisabled = $(self).find('.is-action');
 
-
-								let isActive = $(self).find('.is-active');
-								let isDisabled = $(self).find('.is-action');
-
-								let self_tr = $(self).find('tr');
-								let self_td = $(self_tr).eq(1).find('td');
-
-								for(var i = 1; i < self_td.length; i++){
-									for(var j = 1; j < self_tr.length; j++){
-										let input = $(self_tr).eq(j).find('td').eq(i).find('input');
-
-										if( !$(input).hasClass('is-active') && !$(input).hasClass('is-equator') ){
-											let input_disabled = $(self_tr).eq(j).find('td').eq(i).find('input');
-											arrayDisabled.push( input_disabled.val() )
-										}
-
-										if( $(input).hasClass('is-active') ) {
-											let input_active = $(self_tr).eq(j).find('td').eq(i).find('input');
-											arrayActive.push( input_active.val() )
-										}
-									}
-
-									// for(var j = 1; j < self_td.length; j++){
-									// 	console.log('input - ', $(self_td).eq(i).val());
-									//
-									// 	let input_val = $(self_td).eq(i).val();
-									// 	arrayActive = [].concat(... input_val);
-									//
-									// }
-								}
-
-
-								console.log('arrayActive - ', arrayActive);
-								console.log('arrayDisabled - ', arrayDisabled);
-
-								// arrayDisabled && arrayActive ?
-								// 	isDisabled.forEach((action,i)=>{action.value = _NUMBER/isActive[i].value !== Infinity ?
-								// 		(_NUMBER/isActive[i].value).toFixed(2) :
-								// 		0
-								// 	})
-								// 	: null;
-
-								// arrayDisabled && arrayActive ?
-								// 	$(arrayActive).each( function(i,input) {
-								//
-								// 		isDisabled[i].value =
-								// 			(_NUMBER/arrayActive[i] !== Infinity) ?
-								// 			(_NUMBER/arrayActive[i]).toFixed(3) :
-								// 			0
-								// 	})
-								// : null;
-
-								if(arrayDisabled && arrayActive) {
-
-
-									for(var i = 1; i < self_td.length; i++) {
-
-										for (var j = 1; j < self_tr.length; j++) {
-											let input = $(self_tr).eq(j).find('td');
-
-											$(input).each(function (x, el) {
-
-												if( $(this).hasClass('is-action') ){
-
-													// $(this).val( _NUMBER/arrayActive[x]  )
-
-													console.log('$(this) - ', $(this) )
-
-												}
-
-											})
-
-										}
-									}
-
-								}
-
+							isActive.each(function(i,input) {
+								elActive.push( $(input).val() )
 							});
-						}
-					})
+							isDisabled.each(function(i,input) {
+								elDisabled.push( $(input).val() )
+							});
+
+							elDisabled && elActive ?
+								isDisabled.each(function(i, action){
+									action.value = _NUMBER/isActive[i].value !== Infinity ?
+									(_NUMBER/isActive[i].value).toFixed(2) :
+									0
+								})
+								: null;
+
+							// console.log('isActive - ', isActive);
+							// console.log('isDisabled - ', isDisabled);
+							// console.log('elActive - ', elActive);
+							// console.log('elDisabled - ', elActive);
+
+						});
+					}
 				})
 			})
-
-
-		}
-		getNumeric();
+		})
+	}
+	getNumeric();
 	// js-numeric
 
 	// Generation Alternative-create
@@ -281,7 +223,7 @@ $('document').ready(function(){
 			$(AlternativeSelect).find("option:selected").each(function () {
 				str += $(this).text() + " ";
 			});
-			console.log( parseInt(str) );
+			// console.log( parseInt(str) );
 			for (let i = 0; i < parseInt(str); i++){
 				AlternativeInput.eq(i).show();
 			}

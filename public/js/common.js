@@ -274,14 +274,14 @@ $('document').ready(function () {
     var _NUMBER = 1;
     $tBody.each(function () {
       var self = $(this);
-      var $tr = $(self).find('tr'); // row
+      var $tr = self.find('tr'); // row
 
       $tr.each(function (i) {
         // Numeric element
         var $td = $(this).find('td');
         var $input = $td.eq(i).find('input');
-        $input.addClass('disabled is-equator');
-        $input.val(_NUMBER); // td in row
+        $input.val(_NUMBER);
+        $input.addClass('disabled is-equator'); // td in row
 
         $td.each(function (j) {
           // Disabled element
@@ -295,68 +295,22 @@ $('document').ready(function () {
             $(this).find('input').val(0);
             $(this).find('input').addClass('is-active');
             $(this).find('input').on('keyup', function () {
-              // let self_event = $(this);
-              var arrayActive = [];
-              var arrayDisabled = [];
+              var elActive = [];
+              var elDisabled = [];
               var isActive = $(self).find('.is-active');
               var isDisabled = $(self).find('.is-action');
-              var self_tr = $(self).find('tr');
-              var self_td = $(self_tr).eq(1).find('td');
-
-              for (var i = 1; i < self_td.length; i++) {
-                for (var j = 1; j < self_tr.length; j++) {
-                  var input = $(self_tr).eq(j).find('td').eq(i).find('input');
-
-                  if (!$(input).hasClass('is-active') && !$(input).hasClass('is-equator')) {
-                    var input_disabled = $(self_tr).eq(j).find('td').eq(i).find('input');
-                    arrayDisabled.push(input_disabled.val());
-                  }
-
-                  if ($(input).hasClass('is-active')) {
-                    var input_active = $(self_tr).eq(j).find('td').eq(i).find('input');
-                    arrayActive.push(input_active.val());
-                  }
-                } // for(var j = 1; j < self_td.length; j++){
-                // 	console.log('input - ', $(self_td).eq(i).val());
-                //
-                // 	let input_val = $(self_td).eq(i).val();
-                // 	arrayActive = [].concat(... input_val);
-                //
-                // }
-
-              }
-
-              console.log('arrayActive - ', arrayActive);
-              console.log('arrayDisabled - ', arrayDisabled); // arrayDisabled && arrayActive ?
-              // 	isDisabled.forEach((action,i)=>{action.value = _NUMBER/isActive[i].value !== Infinity ?
-              // 		(_NUMBER/isActive[i].value).toFixed(2) :
-              // 		0
-              // 	})
-              // 	: null;
-              // arrayDisabled && arrayActive ?
-              // 	$(arrayActive).each( function(i,input) {
-              //
-              // 		isDisabled[i].value =
-              // 			(_NUMBER/arrayActive[i] !== Infinity) ?
-              // 			(_NUMBER/arrayActive[i]).toFixed(3) :
-              // 			0
-              // 	})
-              // : null;
-
-              if (arrayDisabled && arrayActive) {
-                for (var i = 1; i < self_td.length; i++) {
-                  for (var j = 1; j < self_tr.length; j++) {
-                    var _input = $(self_tr).eq(j).find('td');
-
-                    $(_input).each(function (x, el) {
-                      if ($(this).hasClass('is-action')) {
-                        // $(this).val( _NUMBER/arrayActive[x]  )
-                        console.log('$(this) - ', $(this));
-                      }
-                    });
-                  }
-                }
-              }
+              isActive.each(function (i, input) {
+                elActive.push($(input).val());
+              });
+              isDisabled.each(function (i, input) {
+                elDisabled.push($(input).val());
+              });
+              elDisabled && elActive ? isDisabled.each(function (i, action) {
+                action.value = _NUMBER / isActive[i].value !== Infinity ? (_NUMBER / isActive[i].value).toFixed(2) : 0;
+              }) : null; // console.log('isActive - ', isActive);
+              // console.log('isDisabled - ', isDisabled);
+              // console.log('elActive - ', elActive);
+              // console.log('elDisabled - ', elActive);
             });
           }
         });
@@ -375,8 +329,7 @@ $('document').ready(function () {
       var str = "";
       $(AlternativeSelect).find("option:selected").each(function () {
         str += $(this).text() + " ";
-      });
-      console.log(parseInt(str));
+      }); // console.log( parseInt(str) );
 
       for (var i = 0; i < parseInt(str); i++) {
         AlternativeInput.eq(i).show();

@@ -158,8 +158,8 @@ $('document').ready(function(){
 					let $td = $(this).find('td');
 					let $input = $td.eq(i).find('input');
 
-					$input.addClass('disabled is-equator');
 					$input.val(_NUMBER);
+					$input.addClass('disabled is-equator');
 
 					// td in row
 					$td.each(function(j){
