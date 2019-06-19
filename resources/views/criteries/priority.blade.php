@@ -36,6 +36,11 @@
                                     @endfor
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-end pt-3">
+                                <div class="alert alert-danger my-0" role="alert">
+                                    Матрица не согласована - <b>0</b>
+                                </div>
+                            </div>
                         </div>
 
                         @if(count($criteria2) != 0)
@@ -62,6 +67,11 @@
                                     @endfor
                                     </tbody>
                                 </table>
+                                <div class="d-flex justify-content-end pt-3">
+                                    <div class="alert alert-danger my-0" role="alert">
+                                        Матрица не согласована - <b>0</b>
+                                    </div>
+                                </div>
                             </div>
                             @endforeach
                         @else
@@ -89,6 +99,11 @@
                                         @endfor
                                         </tbody>
                                     </table>
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <div class="alert alert-danger my-0" role="alert">
+                                            Матрица не согласована - <b>0</b>
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         @endif
@@ -118,6 +133,11 @@
                                     @endfor
                                     </tbody>
                                 </table>
+                                <div class="d-flex justify-content-end pt-3">
+                                    <div class="alert alert-danger my-0" role="alert">
+                                        Матрица не согласована - <b>0</b>
+                                    </div>
+                                </div>
                             </div>
                         @endforeach
                         @elseif(count($criteria3) == 0 && count($criteria2) != 0)
@@ -145,6 +165,11 @@
                                         @endfor
                                         </tbody>
                                     </table>
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <div class="alert alert-danger my-0" role="alert">
+                                            Матрица не согласована - <b>0</b>
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         @endif
@@ -174,6 +199,11 @@
                                         @endfor
                                         </tbody>
                                     </table>
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <div class="alert alert-danger my-0" role="alert">
+                                            Матрица не согласована - <b>0</b>
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         @elseif(count($criteria4) == 0 && count($criteria3) != 0)
@@ -201,11 +231,16 @@
                                         @endfor
                                         </tbody>
                                     </table>
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <div class="alert alert-danger my-0" role="alert">
+                                            Матрица не согласована - <b>0</b>
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         @endif
 
-                        <div class="card-footer">
+                        <div class="card-footer d-flex justify-content-between">
                             <button type="submit" class="btn-custom btn-custom_yellow" role="button" aria-pressed="true">Далее</button>
                         </div>
                     </form>

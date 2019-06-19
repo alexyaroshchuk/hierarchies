@@ -274,14 +274,12 @@ $('document').ready(function () {
     var _NUMBER = 1;
     $tBody.each(function () {
       var self = $(this);
-      var $tr = $(self).find('tr');
-      console.log($tr); // row
+      var $tr = $(self).find('tr'); // row
 
       $tr.each(function (i) {
         // Numeric element
         var $td = $(this).find('td');
         var $input = $td.eq(i).find('input');
-        console.log($input);
         $input.addClass('disabled is-equator');
         $input.val(_NUMBER); // td in row
 
@@ -335,10 +333,30 @@ $('document').ready(function () {
               // 		0
               // 	})
               // 	: null;
+              // arrayDisabled && arrayActive ?
+              // 	$(arrayActive).each( function(i,input) {
+              //
+              // 		isDisabled[i].value =
+              // 			(_NUMBER/arrayActive[i] !== Infinity) ?
+              // 			(_NUMBER/arrayActive[i]).toFixed(3) :
+              // 			0
+              // 	})
+              // : null;
 
-              arrayDisabled && arrayActive ? $(arrayActive).each(function (i, input) {
-                isDisabled[i].value = _NUMBER / arrayActive[i] !== Infinity ? (_NUMBER / arrayActive[i]).toFixed(3) : 0;
-              }) : null;
+              if (arrayDisabled && arrayActive) {
+                for (var i = 1; i < self_td.length; i++) {
+                  for (var j = 1; j < self_tr.length; j++) {
+                    var _input = $(self_tr).eq(j).find('td');
+
+                    $(_input).each(function (x, el) {
+                      if ($(this).hasClass('is-action')) {
+                        // $(this).val( _NUMBER/arrayActive[x]  )
+                        console.log('$(this) - ', $(this));
+                      }
+                    });
+                  }
+                }
+              }
             });
           }
         });
