@@ -93,10 +93,6 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// (function(){
-// 	'use strict';
-//
-// });
 $('document').ready(function () {
   // pop_up veriabel
   var statePop = 0; // hover pop_up
@@ -338,6 +334,14 @@ $('document').ready(function () {
   }
 
   getAlternativeCreate(); // Generation Alternative-create
+  // Print Page
+
+  var printPage = document.querySelector('#print-page');
+  printPage.addEventListener('click', function (e) {
+    console.log('3121');
+    e.preventDefault();
+    window.print();
+  }); // Print Page
 });
 
 /***/ }),

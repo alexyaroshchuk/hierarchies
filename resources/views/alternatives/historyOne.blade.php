@@ -4,11 +4,18 @@
 	{{--<div id="container"></div>--}}
     <div class="card-body">
         <div class="container mb-4">
-            @foreach($alternative as $alt)
-                <p class="text-big d-block mb-3">
-                   {{ $alt['name_alternatives'] }} - <b>{{ $alt['vector_priority'] }}%</b>
-                </p>
-           @endforeach
+	        <div class="row justify-content-sm-between">
+		        <div class="col-md-8">
+			        @foreach($alternative as $alt)
+				        <p class="text-big d-block mb-3">
+					        {{ $alt['name_alternatives'] }} - <b>{{ $alt['vector_priority'] }}%</b>
+				        </p>
+			        @endforeach
+		        </div>
+		        <div class="col-md-4">
+			        <button id="print-page" class="btn-custom btn-custom_green-br">Печать</button>
+		        </div>
+	        </div>
         </div>
     </div>
 	<div class="container py-5 doughnutChart">
@@ -102,6 +109,8 @@
 					values.push( data[i].vector_priority );
 				}
 
+				console.log(values  )
+
 				$('.cones-chart').simpleChart({
 					title: {
 						text: _hierarchies[0].hierarchies_name,
@@ -114,7 +123,7 @@
 					},
 					item: {
 						label: labels,
-						value: values,
+						value: values.reverse(),
 						outputValue: [],
 						color: ['#00aeef'],
 						prefix: '',
